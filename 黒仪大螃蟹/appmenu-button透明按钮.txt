@@ -1,0 +1,126 @@
+@-moz-document url(chrome://browser/content/browser.xul){
+/*#appmenu-button {
+  -moz-appearance: none!important;
+  background-clip: padding-box!important;
+  border-radius: 0 0 4px 4px!important;
+  border: 1px solid!important;
+  border-top: none!important;
+  color: white!important;
+  text-shadow: 0 0 1px rgba(0,0,0,.7),
+               0 1px 1.5px rgba(0,0,0,.5)!important;
+  font-weight: bold!important;
+  padding: 0 1.5em .05em!important;
+  min-height: 6px !important;
+}
+
+#appmenu-button .box-inherit.button-box {
+  display: inherit !important;
+  -moz-margin-start: 0px !important;
+  -moz-margin-end:-10px !important;
+}
+#appmenu-button .box-inherit.button-box .box-inherit{
+  -moz-margin-end:-20px!important;
+}*/
+
+/*==============如果你使用的是Fxchrome主题，去掉前面代码的注释==============*/
+
+#main-window[sizemode="normal"]:not([inFullscreen="true"]) #navigator-toolbox[tabsontop="true"] #TabsToolbar {
+    padding-left:55px !important;
+    padding-right: 105px !important;
+    margin-top: -22px !important; 
+ }
+#main-window[sizemode="maximized"]:not([inFullscreen="true"]) #navigator-toolbox[tabsontop="true"] #TabsToolbar{
+padding-right: 12px !important;
+}
+
+#alltabs-button > .toolbarbutton-icon{display:none!important}
+#appmenu-button{
+    position: relative;
+    z-index:1;
+    top:-1px!important;
+    border-radius:2px 2px 4px 4px!important;
+    width:53px !important;
+    margin-top: -2px !important; 
+}
+
+#main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] #TabsToolbar>toolbarbutton{
+margin-top:-1px!important;
+}
+/*去掉最大化窗口上留有空白*/
+#main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] #tabbrowser-tabs{
+margin-top:-4px!important;}
+
+/*修改橙色按钮“Firefox”文字*/
+#appmenu-button .button-box .box-inherit:before {
+  content: "Menu";
+margin:1px -0px 0px -2px  !important}
+#appmenu-button .button-box .box-inherit .button-text {
+  display: none !important;}
+
+#main-window[sizemode="maximized"] #appmenu-button  .button-box .box-inherit:before {
+  content: "Menu";}
+#main-window[tabsontop="true"][sizemode="maximized"] #appmenu-button .button-icon {
+  list-style-image: none!important;}
+
+/*==========透明===========*/
+#main-window #appmenu-button {
+  color: rgba(0,0,0,.45) !important;
+  text-shadow: 0 1px hsla(0,0%,100%,.35) !important;
+  background-color: transparent !important;
+  background-image: -moz-linear-gradient(hsla(0,0%,100%,.16), hsla(0,0%,100%,.02)) !important;
+  background-position:-1px 1px!important;
+  background-clip: padding-box !important;
+  border: 1px solid rgba(0,0,0,.13) !important;
+  border-top: 0 !important;
+  border-bottom-color: rgba(0,0,0,.14) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06),
+              1px 0 0 hsla(0,0%,100%,.2) inset,
+             -1px 0 0 hsla(0,0%,100%,.2) inset,
+              0 -1px 0 hsla(0,0%,100%,.14) inset !important;
+  height: 19px !important;
+  max-height: 19px !important;
+  min-height: 19px !important;
+}
+
+#appmenu-button .button-menu-dropmarker {
+  list-style-image: none !important;
+}
+
+#main-window #appmenu-button:not([open]):not(:active):hover {
+  background-image: -moz-linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.04)) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06),
+              1px 0 0 rgba(255,255,255,.31) inset,
+              -1px 0 0 rgba(255,255,255,.31) inset,
+              0 -1px 0 rgba(255,255,255,.17) inset !important;
+}
+
+#main-window #appmenu-button[open] {
+  background-image: -moz-linear-gradient(rgba(217,217,217,.08),rgba(240,240,240,.17)) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06),
+              1px 0 0 rgba(255,255,255,.2) inset,
+              -1px 0 0 rgba(255,255,255,.2) inset,
+              0 -1px 0 rgba(255,255,255,.2) inset !important;
+}
+
+
+/*隐私模式*/
+#main-window[privatebrowsingmode] #appmenu-button {
+  background-color: rgba(0,0,0,.3) !important;
+  border-color: rgba(0,0,0,.35) !important;
+}
+#main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .box-inherit > .button-icon {
+display:none!important;
+}
+#main-window #appmenu-button > .box-inherit.button-box{
+  background:url("chrome://browser/skin/privatebrowsing-light.png") -1px 1px no-repeat;
+  margin-left:-18px!important;
+  padding-left:19px!important;
+}
+#main-window:not([privatebrowsingmode=temporary]) #appmenu-button > .box-inherit.button-box{
+  background:
+url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAADnklEQVR4Xl2UzVNSYRTGkS6fV9OkRAxUA7RSrwASQiBFIoDcUgGFIoUkQQnh4mimkDOpq8aZGquNf4JbNy5x5cKFKzeObtQZxa/xa8adnbe5OI2L39yv5zzvOfe852VcX18j7gBsgA/kA3cRx8fHhXDlAhgNh4YFMIE8Op7BoB84q6ur9xUKRfv6+rp8d3e3JhAIWIRCYeLs7Ow+vQBvdnZWsrW1JTw9PS2m32E5MwbtnL+ysiJnMBgzYrE4ZjAYgnBPAemrqysZaB6AoYDP508xmczvHo+nbWNjQwzvcVRNzghDomg06oTAMOAGOgESCM7NzVnn5+eJi4uL0u3t7X5YZBI0ozqd7sPBwUEZXXoeMmJfXl6K7HZ7jM1mu0BkxDBMz+fjRi6PZ2OxWGHI4sfh4eFDyE66sLAQA00AiE9PTxsgvgjAkBHv5OSkkiCIBI7jr/IL7qpLhKXK0rKHalGZWA//qSeTWf5yfn5eAjyYmZnpAGNUepder4+hJFADkBG+v78vhfoHCguLtJWPZA219USDqlGjfFpPvCgWCBJgoAedALgH5Rmj0U/DGIvVBtkO7e3tVaFm/DNCXWJzOEGxpEKj1miVJnOLymJzaBSqRhK6NA4ZE1BaGfynEuiqwuvzDeJ4viUvj9m3s7NTjTz+GaGHwqKiYG19g9ZssTa2uzzaLt87Q0urlXxpNvfV1DxOa7VNg9B26cjISEepSNRXIhSZuFxeECWRM+LDqvKqR9KoUq0xIhN/T+B5qD/88n1Pr8PRRvoUStXIp1gsBTodRVH95ZVVHomk/IVEIolsbm5W50rjgKA8FAqN1xMKe/dbvyE8MGhKJIctcSrpDASCXe/8fmptba0XSgpJZfJYHdHgKK+otHu93jGIrUAeN/toaWkpoFSpP7Z3ul8NJZLmsfEJW/rrJEklk+5ury/Y3GyKN+n0kecGo+dZk84qk8mDi4uLIRSLPHIjwj06Onry4+fPCRC/7wv1OyZSafu3qSkS9ooLmfVCZh0ut7ul1fbmaV2dH7SoCXVo+wDM/4e2ALpi+v3nT9pJkgMQ6Bn7Mv7m6+Tk69HPY+0fQh87HU6y29hsisz9+pVCWhTz/4jkssLQB9gzxuXl5eTQUDzV6XIlbHZHxNJqjTidzng4HEllMpkk0iDt7aG9MaPdcRBWwxHSkc1mB/azWQo2LIXuYbZc8K0mN6y3j5HbMAEWfS4VAwIEfV+QO4tux/0Feup6Yq2obzMAAAAASUVORK5CYII=) 0 1px no-repeat !important;
+}
+
+
+
+}

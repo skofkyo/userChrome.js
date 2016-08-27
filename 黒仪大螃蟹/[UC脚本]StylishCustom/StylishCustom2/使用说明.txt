@@ -1,0 +1,25 @@
+StylishCustom2_x.x.x.uc.js
+兼容：仅兼容stylish2.0以上，如果还在使用低版本的stylish请使用StylishCustom_x.x.x.uc.js
+说明：
+在StylishCustom_x.x.x.uc.js基础上，
+去掉了普通文本编辑器的支持
+（也就是about:config中的extensions.stylish.editor 值为1），估计也没什么人会用这个模式吧。
+去掉了 复制当前行(ctrl+shift+d)的功能，这个功能已经自带（FF33或以上，打开web开发工具：ctrl+shift+K 点击右上方齿轮按钮，选择 按键绑定：Sublime Text）
+
+
+由于stylish2.0+使用了自定义的about:stylish-edit?id=xxx协议。
+原UC扩展没有兼容这种协议的窗体，
+所以必须要修改UC扩展才能让StylishCustom2.uc.js脚本生效。
+（Alice的UC引导脚本也要更新到最新https://raw.githubusercontent.com/alice0775/userChrome.js/master/userChrome.js）
+
+付UC扩展（版本1.7）的修改方法：
+用winrar之类的解压软件依次打开
+userChromeJS-1.7.xpi\components\userChrome_js.js
+将userChrome_js.js文件用记事本之类的文本工具打开，修改131行的代码为
+ 【   if (document.location && (document.location.protocol == "chrome:" || document.location.protocol == "about:")) {】（不含【】）
+
+
+本文件夹中
+userChromeJS-1.7.xpi（UC扩展）是修改好的
+和可用的UC引导文件userChrome.js（v3.0.47mod ）
+（以后不再更新上面两个文件）

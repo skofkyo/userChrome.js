@@ -1,0 +1,86 @@
+﻿FireGestures.generatePopup(event, [ //创建弹出菜单
+{
+	label: "Iexplore",
+	oncommand: "gBrowser._OWAB('C:\\\\Program Files\\\\Internet Explorer\\\\iexplore.exe')",
+	image: "moz-icon:file:///C:\\Program Files\\Internet Explorer\\iexplore.exe\\",
+	class: "menuitem-iconic"
+}, {
+	label: "Chrome",
+	oncommand: "gBrowser._OWAB('F:\\\\Browser\\\\Chrome\\\\Chrome-bin\\\\chrome.exe',['--user-data-dir=Default'])",
+	image: "moz-icon:file:///F:\\\\Browser\\Chrome\\Chrome-bin\\chrome.exe\\",
+	class: "menuitem-iconic"
+}, {
+	label: "Opera",
+	oncommand: "gBrowser._OWAB('F:\\\\\Browser\\\\\Opera usb1161int\\\\\opera.exe')",
+	image: "moz-icon:file:///F:\\Browser\\Opera usb1161int\\opera.exe\\",
+	class: "menuitem-iconic"
+},
+null, //分隔线
+{
+	label: "Firefox",
+	id: "FirefoxBulid",
+	image: "moz-icon:file:///F:\\Browser\\Firefox Bulid\\Release\\firefox.exe\\",
+	class: "menu-iconic"
+}]);
+createSubmenu("FirefoxBulid", [ //创建子菜单
+{
+	label: "Nightly",
+	oncommand: "gBrowser._OWAB('F:\\\\Browser\\\\Firefox Bulid\\\\Nightly\\\\firefox.exe',['-no-remote'], event);",
+	image: "moz-icon:file:///F:\\Browser\\Firefox Bulid\\Nightly\\firefox.exe\\",
+	class: "menuitem-iconic"
+}, {
+	label: "Aurora",
+	oncommand: "gBrowser._OWAB('F:\\\\Browser\\\\Firefox Bulid\\\\Aurora\\\\firefox.exe',['-no-remote'], event);",
+	image: "moz-icon:file:///F:\\Browser\\Firefox Bulid\\Aurora\\firefox.exe\\",
+	class: "menuitem-iconic"
+}, {
+	label: "Beta",
+	oncommand: "gBrowser._OWAB('F:\\\\Browser\\\\Firefox Bulid\\\\Beta\\\\firefox.exe',['-no-remote'], event);",
+	image: "moz-icon:file:///F:\\Browser\\Firefox Bulid\\Beta\\firefox.exe\\",
+	class: "menuitem-iconic"
+}, {
+	label: "Release",
+	oncommand: "gBrowser._OWAB('F:\\\\Browser\\\\Firefox Bulid\\\\Release\\\\firefox.exe',['-no-remote'], event);",
+	image: "moz-icon:file:///F:\\Browser\\Firefox Bulid\\Release\\firefox.exe\\",
+	class: "menuitem-iconic"
+}]);
+
+function createSubmenu(id, arrs) {
+	var menuitem = document.getElementById(id);
+	var menu = document.createElement("menu");
+	menu.setAttribute("label", menuitem.getAttribute("label"));
+	menu.setAttribute("image", menuitem.getAttribute("image"));
+	menu.setAttribute("class", menuitem.getAttribute("class"));
+	menuitem.parentNode.replaceChild(menu, menuitem);
+	var menupopup = document.createElement("menupopup");
+	menu.appendChild(menupopup);
+	for each(var arr in arrs) {
+		if (!arr) menuitem = document.createElement("menuseparator");
+		else {
+			menuitem = document.createElement("menuitem");
+			for (var [name, val] in Iterator(arr)) {
+				menuitem.setAttribute(name, val);
+			}
+			menuitem.setAttribute("tooltiptext", "左键：打开当前页面。\n右键：只打开浏览器。");
+		}
+		menupopup.appendChild(menuitem);
+	}
+}
+gBrowser._OWAB = function (PATH, args, event) {
+	var file = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
+	file.initWithPath(PATH);
+	if (!file.exists()) {
+		alert("File does not exist: " + PATH);
+		return;
+	}
+	var process = Cc["@mozilla.org/process/util;1"].createInstance(Ci.nsIProcess);
+	try {
+		process.init(file);
+		var args = args ? args : [];
+		if (typeof (event) === "undefined" || event.button == 0) args.push(window.content.location.href);
+		else args.push("about:blank"); //防止不同版本间切换后打开新版本页面。
+		process.runwAsync(args, args.length, null, false);
+	} catch (ex) {
+		alert("Failed to execute: " + PATH + "Erro:" + ex);
+	}
+}

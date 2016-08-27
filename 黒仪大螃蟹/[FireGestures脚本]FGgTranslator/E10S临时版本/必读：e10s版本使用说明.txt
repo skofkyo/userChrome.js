@@ -1,0 +1,9 @@
+e10s以后，单单firegestures扩展很难实现了。
+必须配合UC脚本：UC脚本加载脚本，firegestures扩展只能作为调用。
+
+
+使用方法：
+1、使用UC扩展加载本脚本。
+2、在firegestures扩展中新建一个调用手势。内容为：
+
+gBrowser.selectedBrowser.messageManager.sendAsyncMessage('FGgTranslator', readFromClipboard());
