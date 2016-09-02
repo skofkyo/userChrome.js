@@ -1,0 +1,119 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+	@-moz-document url(chrome://browser/content/browser.xul) {
+	/*ABP*/  
+#abp-toolbarbutton>.toolbarbutton-icon {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-8px !important;
+}
+/*Greasemonkey*/
+#greasemonkey-tbb image {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-8px !important;
+}
+/*X-notifier*/  
+#xnotifier-toolbar-button  > .toolbarbutton-icon {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-5px !important;
+}
+/*Outlook™ Notifier Plus*/  		
+#action-button--jid1-sqdeaqsko38zxajetpack-fnoutlook> .toolbarbutton-badge-stack {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-5px !important;
+}		
+/*Simple Mail*/
+#SimpleMailToolbar-icon{
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-5px !important;
+}
+#downloads-button>.toolbarbutton-badge-stack {
+	padding:4px 3px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-3px !important;
+}
+/*书签按钮微调*/
+#nav-bar #bookmarks-menu-button > toolbarbutton > image {
+	border:1px solid #DCDCDC !important;
+	padding:4px 3px !important;
+	margin-left:-5px !important;
+}
+#nav-bar #bookmarks-menu-button > dropmarker > image {
+	border:1px solid #DCDCDC !important;
+	padding:4px 3px !important;
+}
+#nav-bar #bookmarks-menu-button > dropmarker {
+	padding:0 !important;
+	margin-left:-1px !important;
+}
+#home-button>.toolbarbutton-icon {
+	padding:4px 3px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-5px !important;
+}
+#history-panelmenu>.toolbarbutton-icon {
+	padding:4px 3px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-5px !important;
+}
+#bamboo-toolbar-button-feed>.toolbarbutton-icon {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-3px !important;
+}
+/*#pocket-button>* {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-3px !important;
+}*/
+/*#netvideohunter-toolbarbutton>* {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-3px !important;
+}*/
+#lpt_lastpass-compact-btn> image {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-3px !important;
+}
+#stylish-toolbar-button>.toolbarbutton-icon {
+	padding:6px 4px !important;
+	/*border:1px solid #DCDCDC !important;
+	margin-left:-8px !important;*/
+}
+#aup-toolbarbutton image {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-5px !important;
+}
+#userChromebtnMenu>.toolbarbutton-icon {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-8px !important;
+}
+#action-button--sarionightmodezhulinxizi-nightmode-button > * {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-5px !important;
+}
+#ublock0-button>.toolbarbutton-badge-stack {
+	padding:5px 4px !important;
+	border:1px solid #DCDCDC !important;
+	margin-left:-8px !important;
+}	
+#PanelUI-menu-button > * {
+	padding:4px 4px !important;
+	border:1px solid #DCDCDC !important;
+}
+#PanelUI-button {
+	background:none!important;
+	margin-left:-11px !important;
+}
+/* Firefox 40+ giant icons fix*/
+#nav-bar toolbarbutton[cui-areatype="toolbar"] >:-moz-any(#zoom-out-button,#zoom-reset-button,#zoom-in-button,#cut-button,#copy-button,#paste-button) > .toolbarbutton-icon,#nav-bar:-moz-any(#back-button,#forward-button,#home-button,#print-button,#downloads-button,#bookmarks-menu-button,#new-tab-button,#new-window-button,#fullscreen-button,#sync-button,#feed-button,#tabview-button,#social-share-button,#open-file-button,#find-button,#developer-button,#preferences-button,#privatebrowsing-button,#save-page-button,#switch-to-metro-button,#add-ons-button,#history-panelmenu,#nav-bar-overflow-button,#PanelUI-menu-button,#characterencoding-button,#email-link-button,#sidebar-button,#zoom-out-button,#zoom-reset-button,#zoom-in-button,#cut-button,#copy-button,#paste-button,#e10s-button,#panic-button,#web-apps-button,#webide-button,#loop-button,#pocket-button):-moz-any([cui-areatype="toolbar"],:not([cui-areatype])) > .toolbarbutton-icon,#nav-bar:-moz-any(#back-button,#forward-button,#home-button,#print-button,#downloads-button,#bookmarks-menu-button,#new-tab-button,#new-window-button,#fullscreen-button,#sync-button,#feed-button,#tabview-button,#social-share-button,#open-file-button,#find-button,#developer-button,#preferences-button,#privatebrowsing-button,#save-page-button,#switch-to-metro-button,#add-ons-button,#history-panelmenu,#nav-bar-overflow-button,#PanelUI-menu-button,#characterencoding-button,#email-link-button,#sidebar-button,#zoom-out-button,#zoom-reset-button,#zoom-in-button,#cut-button,#copy-button,#paste-button,#e10s-button,#panic-button,#web-apps-button,#webide-button,#loop-button,#pocket-button):-moz-any([cui-areatype="toolbar"],:not([cui-areatype])) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,#nav-bar #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+	width:unset !important;
+}
+}

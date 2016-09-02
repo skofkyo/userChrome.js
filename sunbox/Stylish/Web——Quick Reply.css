@@ -1,0 +1,41 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+/*论坛悬浮回复框by defpt*/
+@-moz-document regexp(".*forum.*"),regexp(".*thread.*"),regexp(".*tid=.*"),regexp(".*read.*tid-.*"),regexp(".*bbs.*") {
+/*左侧细条触发*/
+#anchor,#quickpost,#f_post,#f_pst {
+	position:fixed !important;
+	border:1px solid #51AFF7 !important;
+	overflow:hidden !important;
+	left:auto !important;
+	/*到左侧的距离，可自定义*/
+            width:5px !important;
+	/*触发区宽度*/
+            bottom:0 !important;
+	height:100px !important;
+	/*触发区高度*/
+            padding:0 !important;
+	margin:0 !important;
+	background:#F9F9F9 !important;
+	z-index:99 !important;
+	opacity:1 !important;
+	/*触发区透明度，1为不透明，0为透明，可设值：0~1之间*/
+}
+#anchor:hover,#quickpost:hover,#f_pst:hover,#f_post:hover {
+	overflow:visible !important;
+	width:auto !important;
+	min-width:75% !important;
+	height:auto !important;
+	opacity:1 !important;
+}
+#f_pst .p_pop,#f_pst .p_opt {
+	position:absolute !important;
+	bottom:0 !important;
+	top:auto !important;
+}
+}@-moz-document domain("g.mozest.com") {
+	#fastpostforecolor_menu.popupmenu_popup {
+	position:absolute !important;
+	top:3.5em !important;
+	left:auto !important;
+}
+}

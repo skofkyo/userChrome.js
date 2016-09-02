@@ -1,0 +1,47 @@
+@-moz-document domain("bing.com") {
+/*去链接下划线*/
+* {
+	text-decoration:none !important;
+}
+/*首页调整*/
+#hp_container {
+	min-height:670px!important;
+}
+/*使小屏幕不再出现垂直滚动条*/
+/*中文Bing首页调整*/
+.sh_block,#id_rh {
+	display:none!important;
+}
+/*去除分享、勋章*/
+#hp_tbar .simplePGBar {
+	display:none!important;
+}
+/*去除新闻简栏*/
+#nav_lb li,#nav_lb .recgroup,#nav_bar .navt {
+	opacity:0.8;
+	transition:all 1s;
+}
+#nav_lb li:hover,#nav_lb .recgroup:hover,#nav_bar .navt:hover {
+	opacity:0.95;
+	transition:all 0.5s;
+}
+/*单列显示(低于1920x1080)*/
+#b_results {
+	width:900px!important;
+}
+#b_context {
+	display:none;
+}
+/*搜索项背景半透明*/
+#b_results > .b_ans,#b_results > .b_algo,#b_context .b_ans,#b_context #wpc_ag {
+	background:#D4ECEA !important;
+	border:1px double #A2D7D4 !important;
+	padding:5px !important;
+	margin-bottom:20px;
+	width:80% !important;
+}
+/*去广告*/
+.b_ad {
+	display:none;
+}
+}

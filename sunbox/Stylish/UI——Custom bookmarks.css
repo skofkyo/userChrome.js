@@ -1,0 +1,48 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url(chrome://browser/content/browser.xul) {
+.bookmark-item[container="true"]:-moz-any(
+/*需要显示双列的书签文件夹*/
+  [label="在线服务"],
+  [label="常去网站"],
+  [label="Firefox"],
+  [label="书签文件夹名"],
+  [label="常去论坛"],
+  [label="壁纸素材"],
+  [label="个人网站"],
+  [label="小说电台"],
+  [label="网站制作"],
+  [label="WP相关"],
+  [label="游戏资源"],
+  [label="在线视频"],
+  [label="资讯"]
+) >menupopup>hbox .scrollbox-innerbox {
+	width:380px !important;
+/*双列显示380px,三列显示数值改为570px（3x190）*/
+display:table !important;
+}
+/*需要显示三列的书签文件夹*/
+.bookmark-item[container="true"]:-moz-any(
+  [label="下载"],
+  [label=""],
+  [label=""],
+  [label=""],
+  [label=""],
+  [label=""]
+) >menupopup>hbox .scrollbox-innerbox {
+	width:570px !important;
+/*双列显示380px,三列显示数值改为570px（3x190）*/
+display:table !important;
+}
+.bookmark-item[container="true"]  scrollbox {
+	overflow-y:auto !important;
+}
+.bookmark-item[container="true"]  .bookmark-item .menu-iconic-text {
+	margin-right:-20px!important;
+}
+.bookmark-item[container="true"]:-moz-any(.abhere-menuitem,autorepeatbutton),.bookmark-item[container="true"] .menuitem-iconic.bookmark-item.menuitem-with-favicon ~ menuseparator {
+	display:none!important;
+}
+.bookmark-item[container="true"] .openintabs-menuitem {
+	position:absolute;
+}
+}

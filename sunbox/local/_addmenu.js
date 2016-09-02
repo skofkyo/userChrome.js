@@ -606,24 +606,25 @@ new function () {
     label: "复制扩展清单",
     image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAS1BMVEUAAADrUDjrUDjrTjjqTzjsTzjqTjTrTzjrTzjrTzjsTjfqUDfvUED/Vi3rTznrTzjrTzjrUDfsTjnqTjnpUTbtTTXtTzXrTjvrTzgTjt/vAAAAGHRSTlMAgKDA7KsT85BYQSMQA+a1l31sSC8rHRqoqqGzAAAAVElEQVQY053LRw7AMAgEwMVxL+nt/y+NHSF89yAhtACGGBIGDaEU3hH33bfD7BMH26xXwNbiIKnlQohHkJczAne2jwS/Puq3cq51LaupAjpSFWHQBzj6AmEdre69AAAAAElFTkSuQmCC",
     oncommand: function() {
-        Application.getExtensions(function(extensions) {
-            var actives = [],
-                unActives = [];
-            extensions.all.forEach(function(item) {
-                var arr = item._item.isActive ? actives : unActives;
-                arr.push(item._item.name);
+        if (!window.AddonManager) Cu.import("resource://gre/modules/AddonManager.jsm");
+        AddonManager.getAddonsByTypes(['extension'], function(aAddons) {
+            var extensions = [];
+            aAddons.forEach(function(aAddon) {
+                var name = aAddon.name;
+                var ver = aAddon.version;
+                var dc = aAddon.description;
+                var hU = aAddon.homepageURL;
+                if (aAddon.isActive)
+                    extensions.push(name + ' ' + '[' + ver + ']');
+                else
+                    extensions.push(name + ' ' + '[' + ver + ']' + ' (已停用)');
+                ///*包含說明和首頁*/
+                //if (aAddon.isActive)
+                //    extensions.push(name + ' ' + '[' + ver + ']' + '\n說明：' + dc + '\n首頁：' + hU);
+                //else
+                //    extensions.push(name + ' ' + '[' + ver + ']' + ' (已停用)' + '\n說明：' + dc + '\n首頁：' + hU);
             });
-
-            var str = '目前启用的：\n';
-            str += actives.map(function(name, i) {
-                return i + 1 + ": " + name;
-            }).join('\n');
-            str += '\n\n目前禁用的：\n';
-            str += unActives.map(function(name, i) {
-                return i + 1 + ": " + name;
-            }).join('\n');
-
-            addMenu.copy(str);
+            addMenu.copy(extensions.join('\n'));
         });
     }
 }, 

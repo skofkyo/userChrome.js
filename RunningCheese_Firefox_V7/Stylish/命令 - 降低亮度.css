@@ -1,0 +1,21 @@
+/*@name        LowerContrast
+  @namespace   http://bbs.kafan.cn/thread-1592418-1-1.html
+  @description 减低网页的明亮度
+  @author      runningcheese
+  @version     v2016-02-19 新增影响范围及图标更换 
+	@version     v2015-08-14 
+*/
+
+
+@-moz-document regexp("^((?!about:newtab|about:superstart).)*$") {
+
+browser[type="content-primary"] {background-color:black !important;}
+html{opacity:0.8!important;background:black!important;}
+body{background:white!important;}
+
+}
+
+
+/*更改eyescare图标*/
+#EyesCare[cui-areatype="toolbar"] .toolbarbutton-icon {list-style-image: url("chrome://userchromejs/content/images/icons/eyescare-disable.png");}
+#EyesCare[cui-areatype="menu-panel"] .toolbarbutton-icon, toolbarpaletteitem[place="palette"]> #EyesCare .toolbarbutton-icon{list-style-image: url("chrome://userchromejs/content/images/icons/eyescare-disable_32.png");}

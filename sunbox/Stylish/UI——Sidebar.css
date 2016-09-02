@@ -1,0 +1,46 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url(chrome://browser/content/browser.xul) {
+#sidebar-box {
+	-moz-appearance:none !important;
+	-moz-transition-duration:.3s;
+	-moz-transition-delay:.1s;
+	position:fixed !important;
+	opacity:0 !important;
+	padding:0px !important;
+	top:65px !important;
+	bottom:40px !important;
+	width:318px !important;
+	left:-312px !important;
+	margin-top:2px !important;
+}
+#sidebar-header {
+	width:100% !important;
+}
+#sidebar-box:hover {
+	width:300px !important;
+	height:calc(100% - 110px) !important;
+}
+#aios-toolbar {
+	-moz-appearance:none !important;
+	width:588px !important;
+}
+#sidebar,#bookmarksPanel,#history-panel {
+	height:calc(100% - -20px) !important;
+	width:100% !important;
+}
+#sidebar-splitter {
+	display:none !important;
+}
+/*·Æ¥X*/
+#sidebar-box:hover {
+	left:0px !important;
+	opacity:0.9 !important;
+}
+#sidebar {
+	width:100% !important;
+	margin-top:-2px !important;
+}
+#main-window[sizemode="normal"] #sidebar-box {
+	top:73px !important;
+}
+}

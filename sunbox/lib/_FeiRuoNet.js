@@ -35,8 +35,13 @@ var ServerInfo = [ //在图标提示显示的 服务器信息
  *这里是UA自动切换规则列表。
  *******************************************************************************************/
 var UASites = { //UA自动规则列表
-  "http://www\\.apple\\.com/" : "Chrome-Win7",
+  "^https?:\/\/(.*)\.l(.*)\.yunpan\.cn\/*" : "Android",//360云盘免保存下载
+  "https?://(pan|yun)\.baidu\.com\/*" : "Firefox31-Linux",
+  "https?://www\\.apple\\.com/" : "Chrome-Win7",
   "https?://(?:mybank.*|b2c.*)\\.icbc\\.com\\.cn/" : "Firefox20",//工商銀行
+  "http:\/\/vod\.kankan\.com/" : "Safari-Mac", //直接可以看kankan视频，无需高清组件
+  "http:\/\/wap\.*" : "UCBrowser", //WAP用UC浏览器
+  "http:\/\/browser\.qq\.com\/*" : "Chrome-Win7", 
 	"^https?://([a-zA-Z]+)\\.?kankan.com.*$": "Safari-Mac", //直接可以看kankan视频，无需高清组件
 	"^https?://wap.*": "UCBrowser", //WAP用UC浏览器
 	"^https?://([a-zA-Z]+)\\.?uc.cn.*$": "UCBrowser", //WAP用UC浏览器

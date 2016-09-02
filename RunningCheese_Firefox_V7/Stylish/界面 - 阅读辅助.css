@@ -1,0 +1,56 @@
+/*@name        Global Yahei
+  @namespace   http://www.runningcheese.com/firefox-v6
+  @description 全局雅黑字体
+  @author      runningcheese
+  @version     v2015-08-14
+  @reference   none
+*/
+
+
+/*=====================================全局雅黑=====================================*/
+@-moz-document regexp("((?!wenku.baidu).)*"){
+/*中文字体 */
+    @font-face { font-family: 'Simsun'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: 'SimSun-ExtB'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: 'Microsoft JhengHei'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: 'NSimSun'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: 'FZSongS'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: '宋体'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: '新宋体'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: '黑体'; src: local('Microsoft YaHei UI')}
+    @font-face { font-family: '仿宋'; src: local('Microsoft YaHei UI')}
+}
+
+/*输入框字体*/
+.textbox-input-box,.searchbar-textbox
+ {font-family:Tahoma,Microsoft Yahei, Arial,Helvetica, sans-serif !important;}
+ 
+/*下拉框输入框字体*/
+select,textarea,input{
+	font-family:Tahoma,Microsoft Yahei, Arial, Helvetica, sans-serif !important;
+}
+
+/*修改地址栏文字大小*/
+#nav-bar { -moz-appearance: none !important;
+ font-size: 100% !important; 
+}
+ 
+ 
+/*=====================================文档阅读=====================================*/ 
+@-moz-document regexp(".*\.(t|T)(x|X)(t|T)|.*\.(c|C)(s|S)(s|S)|.*\.(i|I)(n|N)(i|I)|.*\.(l|L)(o|O)(g|G)|.*\.(j|J)(s|S)|.*\.(j|J)(s|S)(o|O)(n|N)|.*\.(b|B)(a|A)(t|T)|.*\.(p|P)(y|Y)|.*\.(s|S)(h|H)|.*\.(p|P)(e|E)(m|M)|.*\.(l|L)(r|R)(c|C)"){
+
+html > body:not([bgcolor]){
+background-color:#f3f2ee !important;
+}
+
+html > body:not([bgcolor]) > pre{
+width:55% !important;
+margin:40px auto !important;
+padding:25px !important;
+white-space:pre-wrap !important;
+word-wrap:break-word !important;
+font-size:14px !important;
+color:#1f0909 !important;
+line-height:25px !important;
+}
+}

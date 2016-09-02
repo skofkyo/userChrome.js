@@ -1,0 +1,256 @@
+@-moz-document url(chrome://browser/content/browser.xul) {
+/*Aero*/
+menupopup,#PanelUI-popup {
+	opacity:.9;
+/*text-shadow:0 0 5px右键菜单字体阴影*/
+}
+menuitem:hover,menu:hover,toolbarbutton:hover,toolbaritem:hover {
+	text-shadow:0 0 1px
+}
+/*MENU*/
+menupopup:not([id="BMB_bookmarksPopup"]),#userChromebtnMenu .popup-internal-box,#lpt_lastpass-compact-menu menuitem,#lpt_lastpass-compact-menu menu,#gTranslator-contextmenu,#BMB_bookmarksPopup menupopup[placespopup=true] > hbox {
+	-moz-appearance:none !important;
+	font-weight:normal !important;
+	border:1px solid rgb(22,25,28) !important;
+	box-shadow:none !important;
+	background-color:transparent !important;
+	background-image:linear-gradient(to bottom,rgb(37,46,54),rgb(36,40,45)) !important;
+}
+menupopup:not([id="BMB_bookmarksPopup"]) {
+	margin-top:-1px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+menubar {
+	-moz-appearance:none !important;
+	background-color:rgb(45,53,63) !important;
+	border-bottom:0px solid rgb(20,20,20) !important;
+}
+#lpt_lastpass-compact-menu menuitem,#lpt_lastpass-compact-menu menu,#BMB_bookmarksPopup menupopup[placespopup=true] {
+	background:transparent !important;
+	box-shadow:none !important;
+	border:0px !important;
+}
+/*MOUSE EVENT ITEMS*/
+menu,menuitem,menupopup menuitem:not([disabled="true"]),#BMB_bookmarksPopup .menu-text {
+	-moz-appearance:none !important;
+	color:rgb(204,204,204) !important;
+	min-height:18px !important;
+}
+menupopup menuitem[disabled="true"] {
+	-moz-appearance:none !important;
+	color:rgb(120,120,120) !important;
+}
+menu[_moz-menuactive="true"],.splitmenu-menuitem[_moz-menuactive="true"],menupopup menuitem[_moz-menuactive="true"]:not([disabled="true"]),#BMB_bookmarksPopup menuitem[_moz-menuactive="true"] .menu-text {
+	color:hsl(208,100%,60%) !important;
+	background-color:rgb(20,20,20) !important;
+}
+menupopup menuitem[_moz-menuactive="true"][disabled="true"] {
+	background-color:rgb(20,20,20) !important;
+}
+/*SEPARATORS*/
+menuseparator {
+	-moz-appearance:none !important;
+	padding:0px 1px 0px 1px;
+	margin:2px 0px 2px 0px;
+	border-top:0px solid !important;
+	border-bottom:0px solid !important;
+	height:2px !important;
+	background:linear-gradient(to right,rgba(9,13,17,0) 0%,rgba(9,13,17,1) 20%,rgba(9,13,17,1) 80%,rgba(9,13,17,0) 100%),linear-gradient(to right,rgba(58,70,80,0) 0%,rgba(58,70,80,1) 20%,rgba(58,70,80,1) 80%,rgba(58,70,80,0) 100%)
+!important;
+	background-repeat:no-repeat,no-repeat  !important;
+	background-size:100% 1px,100% 1px  !important;
+	background-position:top center,bottom center  !important;
+	background-color:transparent  !important;
+}
+/*MENU IMAGE CHECKBOX*/
+menuitem[checked="true"] .menu-iconic-left {
+	-moz-appearance:none !important;
+	background-size:contain !important;
+}
+menuitem[checked="true"]:hover .menu-iconic-left {
+	-moz-appearance:none !important;
+}
+/*MENU IMAGE ARROW*/
+.menu-right {
+	-moz-appearance:none  !important;
+	margin-bottom:3px !important;
+	list-style-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHBAMAAAA2fErgAAAAHlBMVEUAAADMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMwLbf+mAAAACXRSTlMAxgzwvGhfWJjdbDkiAAAAH0lEQVQI12NwU2BgYJgpDiQsZ4oqAImZDWAWWAwsCwBu4wYmScKQRQAAAABJRU5ErkJggg==
+)  !important;
+}
+.menu-right[_moz-menuactive="true"] {
+	list-style-image:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHBAMAAAA2fErgAAAAHlBMVEUAAAAzn/8zn/8zn/8zn/8zn/8zn/8zn/8zn/8zn/9GpXQDAAAACXRSTlMAxgzwvGhfWJjdbDkiAAAAH0lEQVQI12NwU2BgYJgpDiQsZ4oqAImZDWAWWAwsCwBu4wYmScKQRQAAAABJRU5ErkJggg==
+)  !important;
+}
+#BMB_bookmarksPopup .menu-right {
+	margin-bottom:3px !important;
+}
+/*BACKGROUND PANEL*/
+/*.panel-arrow[side="top"],.panel-arrow[side="bottom"] {
+	list-style-image:url(            data:image/svg+xml;
+	base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBWRVJUSUNBTCBQQU5FTCBBUlJPVyAtLT4KCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgIHdpZHRoPSIyMCIKICAgICBoZWlnaHQ9IjEwIj4KICA8cGF0aCBkPSJNIDEsOSBMIDEwLDAgMTksOSB6IgogICAgICAgIGZpbGw9InJnYigwLDAsMCkiLz4KICA8cGF0aCBkPSJNIDEsMTAgTCAxMCwxIDE5LDEwIHoiCiAgICAgICAgZmlsbD0icmdiKDEwMCwxMTUsMTI5KSIvPgogIDxwYXRoIGQ9Ik0gMiwxMCBMIDEwLDIgMTgsMTAgeiIKICAgICAgICBmaWxsPSJyZ2IoMzcsNDYsNTQpIi8+Cjwvc3ZnPgo=
+) !important;
+	position:relative;
+}
+.panel-arrow[side="left"],.panel-arrow[side="right"] {
+	list-style-image:url(            data:image/svg+xml;
+	base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBIT1JJWk9OVEFMIFBBTkVMIEFSUk9XIC0tPgoKPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgd2lkdGg9IjEwIgogICAgIGhlaWdodD0iMjAiPgogIDxwYXRoIGQ9Ik0gOSwxIEwgMCwxMCA5LDE5IHoiCiAgICAgICAgZmlsbD0icmdiKDAsMCwwKSIvPgogIDxwYXRoIGQ9Ik0gMTAsMSBMIDEsMTAgMTAsMTkgeiIKICAgICAgICBmaWxsPSJyZ2IoMTAwLDExNSwxMjkpIi8+CiAgPHBhdGggZD0iTSAxMCwyIEwgMiwxMCAxMCwxOCB6IgogICAgICAgIGZpbGw9InJnYigzNyw0Niw1NCkiLz4KPC9zdmc+
+) !important;
+	position:relative;
+}
+*/
+
+.panel-arrowcontent {
+	background-image:linear-gradient(to bottom,rgb(37,46,54),rgb(36,40,45)
+) !important;
+	color:rgb(204,204,204) !important;
+	margin:3px !important;
+}
+/*BACKGROUND SUB PANEL*/
+.panel-subviews {
+	padding:4px;
+	-moz-margin-start:38px;
+	background-clip:padding-box;
+	background-color:transparent !important;
+	background-image:linear-gradient(to bottom,rgb(37,46,54),rgb(36,40,45)
+) !important;
+	border-left:1px solid hsla(210,4%,10%,.3);
+	box-shadow:none !important;
+}
+/*Download下拉菜单文字变色*/
+#emptyDownloads {
+	color:rgb(204,204,204) !important;
+}
+#downloadsHistory {
+	color:rgb(51,159,255) !important;
+}
+/*tooltip*/
+tooltip {
+	-moz-appearance:none !important;
+	background:#606060 !important;
+	opacity:0.8 !important;
+	color:white !important;
+}
+statuspanel {
+	width:auto !important;
+}
+.statuspanel-label {
+	background:rgb(20,20,20) !important;
+	border:none !important;
+	opacity:0.90 !important;
+	color:#DDDDDD !important;
+	text-align:center !important;
+}
+/*internal content*/
+.menu-accel,.menu-iconic-accel,.menu-text,.menu-iconic-text {
+	-moz-appearance:none !important;
+	color:inherit !important;
+}
+/*PANEL ITEMS*/
+panelview .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)),#PanelUI-footer toolbarbutton:not(:-moz-any([disabled],[open],:active)),toolbarbutton.subviewbutton:not(:-moz-any([disabled],[open],:active)),menu.subviewbutton:not(:-moz-any([disabled],:active)),menuitem.subviewbutton:not(:-moz-any([disabled],:active)),.share-provider-button:not(:-moz-any([disabled],[open],:active)),.widget-overflow-list .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)),.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),[overflowedItem=true]) > toolbarbutton:not(:-moz-any([disabled],[open],:active)) {
+	-moz-appearance:none !important;
+	color:rgb(204,204,204) !important;
+}
+panelview .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)):hover,toolbarbutton.subviewbutton:not(:-moz-any([disabled],[open],:active)):hover,menu.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],menuitem.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],.share-provider-button:not(:-moz-any([disabled],[open],:active)):hover,.widget-overflow-list .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)):hover,.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),[overflowedItem=true]) > toolbarbutton:not(:-moz-any([disabled],[open],:active)):hover,.subviewbutton:not([disabled])[_moz-menuactive],menuitem.panel-subview-footer:not(:-moz-any([disabled],:active))[_moz-menuactive],.subviewbutton.panel-subview-footer:not(:-moz-any([disabled],[open],:active)):hover,.subviewbutton.panel-subview-footer:not([disabled]):-moz-any([open],:hover:active),.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive] > .menu-accel-container,.PanelUI-subView .subviewbutton[shortcut]:not(:-moz-any([disabled],[open],:active)):hover::after,#BMB_bookmarksPopup .panel-subview-footer:not([disabled])[_moz-menuactive] > .menu-text {
+	background-color:rgb(20,20,20) !important;
+	color:rgb(51,159,255) !important;
+	border-color:transparent !important;
+}
+/*文字对齐*/
+#menu_devToolbox {
+	margin-left:-14px !important;
+}
+#menu_devToolbar {
+	margin-left:-12px !important;
+}
+#menu_responsiveUI {
+	margin-left:-12px !important;
+}
+#menu_eyedropper {
+	margin-left:-12px !important;
+}
+#redirector-reload {
+	margin-left:12px !important;
+}
+#redirector-edit {
+	margin-left:12px !important;
+}
+#translateselected-gTranslator {
+	margin-left:26px !important;
+}
+#translatepage-gTranslator {
+	margin-left:26px !important;
+}
+/*#abp-menuitem-disabled {
+	margin-left:-12px !important;
+}
+#abp-menuitem-whitelistsite {
+	margin-left:-12px !important;
+}
+#abp-menuitem-whitelistpage {
+	margin-left:-12px !important;
+}
+*/
+/*menuitem[label]:not(.searchbar-engine-menuitem),.splitmenu-menuitem {
+	-moz-binding:url("chrome://global/content/bindings/menu.xml#menuitem-iconic-noaccel")!important
+}
+menupopup menu[label]:not(.split-menuitem-menu),popup menu[label]:not(.split-menuitem-menu) {
+	-moz-binding:url("chrome://global/content/bindings/menu.xml#menu-iconic") !important
+}
+hbox.menu-iconic-left,menu > hbox.menu-iconic-left {
+	-moz-appearance:menuimage;
+}
+*/
+
+/*横排菜单背景*/
+#context-navigation {
+	background:rgb(37,46,54) 80% !important;
+}
+/*地址栏收藏图标样式替换*/
+#context-reload {
+	list-style-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAANwAAADcBYx2BhQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF4SURBVDiNpZO9ahtBFIXPWRZkEdALpAgyCBfpAm4MqVymiTtXQipmBmLYLkWKYIGfwYYZJGzrBfwEAsuFG4ELF8ZgUJc2RX5YSUE6aXbNyl47KL7d3Dvf4dzhDCXhJRU/bDSbzVfVanVP0haAzaw9InmZpulhv9//DQDOuY73vsOiA2PM+yiKTiStAxCAu2zUAECS48Vi0YqiaFvSfgiBcREmeS5pBuDzfD73vV7vJwAkSVKbTCZ7kjokh5KYc5SU276W9Jrklvf+qmxfa+0xgFZ+vneQ7bxO8ssz8EERXnrE7MFUqVSOyuB2u70Wx/EAwODhjJJgrf0G4FcIYaNM4LmKVgWeEhgBaCRJUvsvAZKXADidTj/9CzDG1K21b5cE0jQ9JDmW1HHOvXsKds59JHkD4DTv3ScxDxKAGYCvxSAZY+okdwEcAPgBYCeEMFwSyEVKolwB8CZbdQzgg/f+9pGDvEo+0x8AQ0kXks663e734v1HAqvWXwD7tZttPsQJAAAAAElFTkSuQmCC) !important;
+	-moz-image-region:rect(0px 16px 16px 0px) !important;
+}
+/*地址栏收藏图标样式替换*/
+#context-bookmarkpage {
+	list-style-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAARQAAAEUBOP42OwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHQSURBVDiNndQ7aFRREMbx30aLiE/wAYJprDRIJAohjYm9FiJ2vmAnVgGDqYyFYGUhKJYaBy3EwkJQEcTGQhRR8EEkrXZiYSHxESQxFntW4prcDU51mPnmf74z95xbm5ub0y4i4iBk5p122lo7YERswjvUsCMzP1XpO9ra4wo2YgOutRNXAiPiOA7MS+2PiKGqnkWPHBFdmMBaPCjpffiKnsx8v2RgRGzDVezBN3SX0iRW4jkiMycXBUbEChzCiQJqxmhmXiqaU7g4r/YU47idmT+gVq/XdxbIYaxr2fAV+jJztgCX4QV2tei+4CbGOzCC4XmwWTzCUQw0YVDWAziCh0VLY87DGKnV6/XVeIOtmC6OJlpns1BExHa81JjrB/R0ZOZUcTOLTlyPiDVLgK3CjQL7hWOZOdVRjvIM54t2N+5FRGcFrBP30VdSFzLzCX9f7HPFPgyiv8JgP/aW9VucbRb+ADNzBqcrIIvFmcz8+Q+wxPeFOiKiOyK6F6q19iyv2HlzRIxqXJHeAn6tcd8+LtZUBby1QK63Cf8fYDM+azwvGi9qfZW46vc1UQBdmTmWmWPYgiGNL7skh7O4i8uZ+bhVnJnTSGREDOIkZuZrfgP/yZjDH5fFkgAAAABJRU5ErkJggg==) !important;
+	-moz-image-region:rect(0px 20px 20px 0px) !important;
+}
+/*lastpass*/
+#lpt_lastpass-compact-menu menuitem,#lpt_lastpass-compact-menu menu {
+	color:white!important;
+}
+/*全局隐藏下拉菜单小三角*/
+.panel-arrow[side="top"],.panel-arrow[side="bottom"] {
+	display:none;
+}
+}/*QuickMar扩展添加书签下拉菜单*/
+@-moz-document url-prefix("resource://jid0-qt2vxewb9xzbrlyapsjja4ebwou-at-jetpack/quickmark/data/folderSelection.html") {
+	#folder-tree {
+	color:rgb(204,204,204) !important;
+}
+#folder-tree .folder:hover {
+	color:rgb(51,159,255) !important;
+	background-color:rgb(20,20,20) !important;
+	border-color:transparent !important;
+} 	
+}
+/*History Submenus II扩展添加的历史菜单背景*/
+#PanelUI-HSM-historyItems menuitem{
+  background-image:linear-gradient(to bottom,rgb(37,46,54),rgb(36,40,45)) !important;
+} 
+/*SarioNightmode*/
+@-moz-document url(resource://sarionightmode-at-zhulinxizi/night-mode/data/setting/panel.html) {
+  body{
+    color:rgb(204,204,204) !important;
+	  background-image:linear-gradient(to bottom,rgb(37,46,54),rgb(36,40,45)) !important;
+	}
+      .onoffswitch-switch {
+        background: #0099cc !important;
+    }
+  .onoffswitch-inner:before {
+        content: "ON";
+        background-color: #99FFFF !important;
+    }
+}

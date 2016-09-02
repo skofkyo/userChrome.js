@@ -1,0 +1,611 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url(chrome://browser/content/browser.xul) {
+	/*=============================标签栏========================*/
+/*Windows10-10586自适应彩色标题栏适配，DPI超过100%不建议开启*/
+/*@media (-moz-os-version:windows-win10) {
+	#main-window,#titlebar-buttonbox-container {
+	background-color:transparent !important;
+}
+#titlebar-buttonbox .toolbarbutton-icon {
+	display:none !important;
+}
+#titlebar-min,#titlebar-max,#titlebar-close:not(:hover) {
+	padding:14px 23px !important;
+}
+#titlebar-close:hover .toolbarbutton-icon {
+	display:-moz-box!important;
+}
+#titlebar-close:hover {
+	padding:8px 17px !important;
+}
+}
+/*为win10系统指定标签栏背景，可自定义颜色*/
+@media (-moz-os-version:windows-win10) {
+	#browser-panel {
+	-moz-appearance:none !important;
+	background-color:rgb(135,206,250) !important;
+	/*background-image:linear-gradient(to right,#007AFF 7%,#E00728,#FFDA20,#007AFF,#22B129,#E00728,transparent)!important;*/
+}
+}
+/*系统三大键调整*/
+#main-window[sizemode="maximized"] #titlebar-buttonbox-container .titlebar-button {
+	padding:4px 8px !important;
+	margin-bottom:8px !important
+}
+#main-window[sizemode="normal"] #titlebar-buttonbox-container .titlebar-button {
+	padding:4px 8px !important;
+	margin-bottom:12px !important
+}
+/*自动隐藏工具栏，鼠标移动到标签栏自动显示*/
+/*#browser {
+	margin-top:-2.9em !important;
+}
+#nav-bar {
+	overflow-y:hidden !important;
+	max-height:3px !important;
+	min-height:3px !important;
+}
+:hover > #nav-bar {
+	max-height:3em !important;
+}
+/*隐藏标签栏网站图标*/	
+/*.tabbrowser-tabs .tab-icon-image {display: none !important;}
+/*窗口化标签栏置顶*/
+/*#main-window[sizemode="normal"] #TabsToolbar {
+	margin-top:1px !important;
+}
+/*缩进地址栏和搜索栏间距*/
+/*window #urlbar {margin-right: 0px !important; border-top-right-radius:0!important; border-bottom-right-radius:0!important;}
+window #urlbar-search-splitter:not(:hover) + #search-container .searchbar-textbox {margin-left: 0px !important; border-left:0 !important;}	
+/*最大化标签容器*/
+#TabsToolbar {
+	margin-right:-22px !important;	
+}
+/*当前标签高亮*/
+.tabbrowser-tab .tab-text[selected="true"] {
+	font-weight:bold !important;
+}
+/*非当前标签页标题文字显示为白色*/
+/*@media (-moz-os-version:windows-win10) {	
+.tabbrowser-tab:not([selected=true]) {
+	text-shadow:0px 1px 8px gainsboro !important;
+	color:white !important;
+}	
+}	
+/*标签高度*/
+#tabbrowser-tabs {
+	min-height:28px !important;
+}
+.tab-background-start[selected=true]::after,.tab-background-start[selected=true]::before,.tab-background-start,.tab-background-end,.tab-background-end[selected=true]::after,.tab-background-end[selected=true]::before {
+	min-height:28px!important;
+}
+/*窗口下标签高度*/	
+#main-window[sizemode="normal"] #tabbrowser-tabs {
+	min-height:32px !important;
+}
+#main-window[sizemode="normal"] .tab-background-start[selected=true]::after,.tab-background-start[selected=true]::before,.tab-background-start,.tab-background-end,.tab-background-end[selected=true]::after,.tab-background-end[selected=true]::before {
+	min-height:32px!important;
+}	
+/*标签页和导航栏对齐*/
+#TabsToolbar .arrowscrollbox-scrollbox {
+	padding-left:0px !important;
+}
+/*窗口下标签页和导航栏对齐*/	
+#main-window[sizemode="normal"] #tabbrowser-tabs .arrowscrollbox-scrollbox {
+	margin-left:-70px !important;
+  margin-top: 4px !important;
+}
+/*标签页序号*/
+.tabbrowser-tab .tab-close-button {/*标签关闭按钮调整*/
+  padding-bottom: 2px !important;
+}
+.tab-content{
+  position: relative !important;
+}
+.tabbrowser-tab .tab-close-button:after {
+  content: counter(tabs) !important;
+  position: absolute !important;
+  margin: -8px -15px !important;
+  padding: 0px 4px 0px 2px !important;
+  font-family:sans-serif !important;
+	font-weight:600 !important;
+  min-width: 9px !important;
+	max-width: 11px !important;
+  height: 15px !important;
+  background-color: #dd2e1f !important;
+  border-radius: 3px !important;
+  text-align: center !important;
+  color: #fff !important;
+  font-size: 9px !important;
+  
+}
+.tabbrowser-tab:nth-child(99) .tab-close-button:after{
+  content: "99" !important;
+}
+.tab-close-button:hover:after {/*悬浮于关闭按钮时不显示数字*/
+  display: none !important;
+}	
+/*当前标签显示关闭按钮*/
+.tabbrowser-tab:not([selected]) .tab-close-button {
+	display:none!important;
+}
+/*非当前页关闭按钮自动隐藏*/
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+	display:inherit!important;
+}
+/*stylish图标强制点亮*/
+/*#stylish-toolbar-button {
+	list-style-image:url("chrome://stylish/skin/16.png") !important;
+}
+/*myNewTab页面下收藏夹图标不变色*/
+#bookmarks-menu-button image {
+	opacity:1 !important;
+}
+/*标签计数*/
+#main-window {
+	counter-reset:tabs;
+}
+.tabbrowser-tab:not(:-moz-any([pinned],[concealed])) {
+	counter-increment:tabs;
+}
+#alltabs-button {
+	visibility:visible!important;
+}
+#alltabs-button:after {
+	content:counter(tabs);
+	font-size:13px;
+	display:-moz-box;
+	color:#000;
+	z-index:999 !important;
+}
+#alltabs-button >:-moz-any(label,image) {
+	display:none;
+}
+#alltabs-button menuitem {
+	max-width:200px !important;
+}
+/*标签计数下拉菜单标签计数*/	
+#main-window > #tab-view-deck > #browser-panel #alltabs-button > #alltabs-popup { 
+  counter-reset: latabs !important;
+}
+#main-window > #tab-view-deck > #browser-panel #alltabs-button > #alltabs-popup .menuitem-iconic.alltabs-item.menuitem-with-favicon {
+  counter-increment: latabs !important;
+}
+#main-window > #tab-view-deck > #browser-panel #alltabs-button > #alltabs-popup .menuitem-iconic.alltabs-item.menuitem-with-favicon:before {
+  content: counter(latabs) !important;
+  min-width: 16px !important;
+  display: -moz-box !important;
+}	
+/*============================导航栏设置===========================*/
+/*关闭地址栏flash提醒*/
+#alert-plugins-notification-icon,#notification-popup-box,#identity-icon-country-label {
+	display:none !important
+}
+/*地址栏flash提醒图标距离调整*/
+#plugins-notification-icon {
+	margin-left:-4px !important;
+}
+/*修改地址栏字体大小*/
+#urlbar,.urlbar-input-box {
+	font-size:14px !important;
+	font-family:Bitstream Vera Sans,"Ubuntu",Tahoma !important;
+	padding-bottom:1px !important;
+}
+.searchbar-textbox {
+	font-size:13px !important;
+}
+/*缩短地址栏和搜索栏之间的距离*/
+#urlbar-search-splitter.chromeclass-toolbar-additional {
+	display:none !important;
+}
+/*搜索栏宽度*/
+#search-container {
+	max-width:260px !important;
+}
+/*导航栏高度*/
+#nav-bar > * {
+	margin-top:-2px !important;
+	margin-bottom:-2px !important;
+}
+/*地址栏图标样式*/
+#identity-box {
+	padding:0 2px 0 0 !important;
+}
+/*前进后退按钮和地址栏显示信息距离调整*/
+/*window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-button[disabled] {
+	margin-left:0px;
+}
+*/
+
+#MemoryDisplay {
+	padding:0 4px 0 0 !important;
+	border:none !important;
+}
+#MemoryDisplay .statusbarpanel-text {
+	padding:0 3px !important;
+	margin:0 !important;
+	border-left:1px #D3D3D3 solid;
+	border-right:1px #D3D3D3 solid;
+}
+#statusbarZoomLevel {
+	padding:1px 0px 0px 6px !important;
+	margin-right:1px  !important;
+	border:none !important;
+}
+#statusbarZoomLevel .statusbarpanel-text {
+	padding:0 3px !important;
+	margin:0 !important;
+	border-left:1px #D3D3D3 solid;
+}
+#urlbar-icons * {
+	padding:0px !important;
+	border:none !important;
+	background:none !important;
+}
+#urlbar-icons {
+	padding:0px 2px!important;
+	border-right:1px rgba(0,0,0,.1) solid;
+	margin-right:-4px !important;
+	margin-top:-1px !important;
+	margin-bottom:-1px !important;
+}
+#urlbar-go-button,#urlbar-reload-button,#urlbar-stop-button {
+	padding-left:4px !important;
+	padding-right:4px !important;
+	margin-right:0px !important;
+	background:#F4F4F4 !important;
+	border:none !important;
+}
+#urlbar-go-button:hover,#urlbar-reload-button:hover,#urlbar-stop-button:hover {
+	background:#DFDFE0 !important;
+}
+/*FF42+地址栏identity-box调整*/
+#identity-box {
+	background:none !important;
+	border:none !important;
+}
+/*搜索栏强制边框*/
+.searchbar-textbox {
+	border:1px solid #DCDCDC !important;
+	margin-right:1.6px !important;
+	margin-bottom:1px !important;
+}
+/*地址栏完整显示*/
+#urlbar {
+	border:1px solid #DCDCDC   !important;
+}
+/*鼠标指向地址栏搜索栏变色*/
+#nav-bar textbox:hover {
+	border-color:#c6c6c6 !important;
+}
+/*地址栏左边距离*/
+#urlbar {
+	margin-left:2px !important;
+}
+/*显示前进后退按钮*/
+#forward-button {
+	opacity:1 !important;
+	visibility:visible !important;
+	-moz-box-align:center !important;
+}
+/*前进后退按钮调整*/
+#back-button,#forward-button {
+	-moz-appearance:none !important;
+	margin-left:-1px !important;
+	margin-right:4px !important;
+}
+#urlbar-wrapper {
+	padding:0 !important;
+	margin:0 !important;
+	clip-path:none !important;
+}
+#forward-button[disabled="true"] {
+	display:none !important
+}
+#back-button[disabled="true"]:hover {
+	background:none !important;
+}
+/*去三道杠左边分割线*/
+#PanelUI-button {
+	border:none !important;
+}
+#PanelUI-button {
+	margin-left:0px !important;
+}
+/*地址栏脚本扩展图标间距微调*/
+#uAutoPagerize-icon {
+	padding:1px !important;
+	margin-left:-1px !important;
+}
+#autocopy-statusbarpanel {
+	padding:3px !important;
+	margin-left:-3px !important;
+}
+#reader-mode-button {
+	padding:0px 3px 0px 3px!important;
+	margin-left:-3px !important;
+}
+#pocket-button {
+	padding:2px !important;
+	margin-left:-3px !important;
+}
+#SimpleMusicPlayer {
+	padding:2px !important;
+	margin-left:-3px !important;
+}
+#QRCreator-icon {
+	padding:2px !important;
+	margin-left:-3px !important;
+}
+#netvideohunter-toolbarbutton {
+	padding:1px !important;
+	margin-left:-2px !important;
+}	
+#reader-mode-button {
+	margin-right:1px !important;
+	margin-left:-3px !important;
+}	
+#urlbar-speedmonitor {
+	padding:1px !important;
+	margin-left:0px !important;
+}
+/*固定地址栏高度*/
+.textbox-input-box {
+	height:22px !important;
+}
+/*地址栏图标排序*/
+#uAutoPagerize-icon {
+	-moz-box-ordinal-group:6!important;
+}
+#pocket-button {
+	-moz-box-ordinal-group:5!important;
+}
+#SimpleMusicPlayer {
+	-moz-box-ordinal-group:4!important;
+}
+#QRCreator-icon {
+	-moz-box-ordinal-group:3!important;
+}
+#netvideohunter-toolbarbutton {
+	-moz-box-ordinal-group:2!important;
+}
+#reader-mode-button {
+	-moz-box-ordinal-group:1!important;
+}
+#urlbar-speedmonitor {
+	-moz-box-ordinal-group:0!important;
+}
+/*http及htpps网址下隐藏网站信息提示感叹号，适配45+*/	
+#main-window[stylish-url^="https://"] #identity-icon {
+	display:none!important;
+}
+#main-window[stylish-url^="http://"] #identity-icon {
+	display:none!important;
+}	
+/*去状态类分隔*/
+statusbarpanel {
+	-moz-appearance:none !important;
+	border:none !important;
+}
+/*FeiRuoNet图标校正*/
+#FeiRuoNet_icon {
+	margin:0px -3px 1px 3px !important;
+}
+/*无FeiRuoNet国旗图标时地球图标校正*/
+#page-proxy-favicon {
+	margin-left:4px !important;
+	margin-right:-2px !important
+}
+/*https下绿锁图标修正*/    
+#main-window[stylish-url^="https://"] #connection-icon {
+	margin-left:2px !important;
+	margin-right:0px !important;
+	border-right:1px #D3D3D3 solid;
+}
+/*地址栏地球图标修正*/
+#identity-box {
+	background-image:none !important;
+}
+#identity-icon-label {
+	padding-bottom:2px !important;
+	margin-left:1px !important;
+	margin-right:-14px !important;
+}
+/*ff29自带历史按钮仅保留最近关闭的标签咧列表和查看历史菜单*/
+#appMenuViewHistorySidebar,#appMenuClearRecentHistory,#sync-tabs-menuitem2,#appMenuRestoreLastSession,#PanelUI-recentlyClosedTabs-separator,.restoreallitem.subviewbutton,#PanelUI-historyItems,#PanelUI-historyItems-separator {
+	display:none!important;
+}
+/*============================其他细节调整===========================*/
+/*标签文字背景留白*/
+/*tab:not([selected="true"] ) {
+	text-shadow:0 0 8px white,0 0 8px white,0 0 8px white  !important;
+}
+/*只在打开新标签页时显示书签工具栏*/
+/*#main-window #PersonalToolbar {
+	visibility:collapse;
+}
+#main-window[customizing] #PersonalToolbar,#main-window[stylish-url="about:newtab"] #PersonalToolbar,#main-window[stylish-url="chrome://mynewtab/content/index.html"] #PersonalToolbar,#main-window[stylish-url="chrome://fvd.speeddial/content/fvd_about_blank.html"] #PersonalToolbar,#main-window[stylish-url="chrome://speeddial/content/speeddial.xul"] #PersonalToolbar,#main-window[stylish-url="chrome://fastdial/content/fastdial.html"] #PersonalToolbar {
+	visibility:visible;
+}
+/*书签工具栏居中显示*/
+/*#PersonalToolbar #PlacesToolbarItems {
+	-moz-box-pack:center !important;
+}
+/*书签工具栏显示效果修正*/
+#nav-bar ~ #PersonalToolbar:not([customizing]) {
+	padding:3px 2px 2px !important;
+	margin-top:-1px !important;
+	border-left:1px solid transparent !important;
+	/*background:rgb(255,182,193) !important;
+	/*书签工具栏背景颜色，可自行更换颜色代码*/
+}
+/*AidBar.uc.js 辅助样式*/
+/*#TabsToolbar_aidBar {
+	overflow:hidden !important;
+	max-width:16px !important;
+	opacity:0 !important;
+	transition:0.8s !important;
+	transition-delay:1s !important;
+}
+#TabsToolbar_aidBar:hover {
+	max-width:300px !important;
+	opacity:1 !important;
+	transition-delay:.2s !important;
+}
+#TabsToolbar_aidBar > image,.statusbarpanel-iconic {
+	padding:5px 2px;
+}
+/*书签项宽度*/
+.bookmark-item menuitem {
+	min-width:180px !important;
+	max-width:200px !important;
+}
+/*隐藏书签按钮菜单多余项*/
+#BMB_viewBookmarksSidebar,#BMB_viewBookmarksSidebar+menuseparator,#BMB_bookmarkThisPage,#BMB_subscribeToPageMenuitem,#BMB_subscribeToPageMenupopup,#BMB_subscribeToPageMenupopup+menuseparator,#BMB_bookmarksToolbar,#BMB_unsortedBookmarks,#BMB_unsortedBookmarks+menuseparator {
+	display:none !important;
+}
+#BMB_bookmarksShowAllTop,#BMB_bookmarksShowAllTop+menuseparator {
+	display:none !important;
+}
+#BMB_bookmarksPopup > menuseparator:nth-child(13) {
+	display:none !important;
+}
+#BMB_pocket,#BMB_pocket+menuseparator {
+	display:none !important;
+}
+/*隐藏在标签页中打开书签组*/
+.bookmarks-actions-menuseparator,.openintabs-menuitem {
+	display:none !important;
+}
+/*隐藏单独书签收藏夹按钮*/
+#bookmarks-menu-button>.toolbarbutton-menubutton-dropmarker {
+	display:none!important;
+}
+/*隐藏两个书签按钮之间的分割线*/
+#bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
+	visibility:hidden;
+}
+#bookmarks-menu-button .toolbarbutton-menubutton-dropmarker .dropmarker-icon {
+	visibility:visible;
+}
+/*书签按钮下拉菜单文字缩放*/
+/*#BMB_bookmarksPopup .menu-iconic-text,#BMB_bookmarksPopup .menu-text {
+	font-size:13px !important;
+}
+/*书签按钮下拉菜单、历史下拉菜单、三道杠菜单背景文字调整*/
+panelview .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)):hover,toolbarbutton.subviewbutton:not(:-moz-any([disabled],[open],:active)):hover,.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),[overflowedItem=true]) > toolbarbutton:not(:-moz-any([disabled],[open],:active)):hover,.subviewbutton:not([disabled])[_moz-menuactive],#BMB_bookmarksPopup .panel-subview-footer:not([disabled])[_moz-menuactive] > .menu-text {
+	background-color:#91C9F7 !important;
+	/*color:white !important;
+	*/
+border-color:transparent !important;
+}
+/*去dropmarker*/
+#userChromeJsManagerMenuBtn dropmarker,/*#urlbar dropmarker,*/
+#FeiRuoTabplus_UndoBtn dropmarker,#abp-toolbarbutton dropmarker,#aup-toolbarbutton dropmarker,#greasemonkey-tbb dropmarker,#s3gt-toolbar-button dropmarker,#stylish-toolbar-button dropmarker {
+	display:none !important;
+}
+/*取消菜单动画*/
+/*#BMB_bookmarksPopup, #PanelUI-popup, #downloadsPanel, #customizationui-widget-panel{
+  transition: none !important;
+}	
+/*三道杠菜单里去除小三角*/
+.panelUI-grid .toolbarbutton-1[type="menu"] {
+	background-image:none !important;
+}
+/*查找栏左上角版*/
+.browserContainer findbar,#viewSource #FindToolbar {
+	-moz-box-ordinal-group:0;
+	position:fixed !important;
+	left:0px;
+	background:#F1F1F1 !important;
+	margin-top:-1px !important;
+	border-bottom:1px solid #A0A0A0 !important;
+	border-right:1px solid #A0A0A0 !important;
+	border-bottom-right-radius:8px !important;
+}
+/*高亮工具条右上角版*/
+#wordhighlight-toolbar-box {
+	-moz-box-ordinal-group:0;
+	position:fixed !important;
+	right:0px !important;
+	margin-top:-1px !important;
+	background:#F1F1F1 !important;
+	border-bottom:1px solid #A0A0A0 !important;
+	border-left:1px solid #A0A0A0 !important;
+	border-bottom-left-radius:8px !important;
+}
+.wordhighlight-toolbar-item {
+	padding:0 2px !important;
+}
+#wordhighlight-toolbar-box .wordhighlight-toolbar-arrowscrollbox {
+	width:auto !important;
+}
+/*粘贴并转到、搜索置顶*/
+.urlbar-textbox-container menuitem[anonid="paste-and-go"]:not([disabled="true"]) {
+	-moz-box-ordinal-group:0 !important;
+}
+.searchbar-textbox menuitem[anonid="paste-and-search"]:not([disabled="true"]) {
+	-moz-box-ordinal-group:0 !important;
+}
+#context-pasteandgo-forms:not([disabled="true"]) {
+	-moz-box-ordinal-group:0 !important;
+}
+/*隐藏清除历史记录的提示项*/
+.menu-accel-container {
+	opacity:0!important;
+	min-width:16px !important;
+	max-width:16px !important;
+}
+/*uc脚本管理器图标对齐*/
+#ucjs_UserAgentChanger,#redirector-icon,#gm_general_menu {
+	padding:0px !important;
+	margin-left:0px !important;
+}
+/*强制界面边框*/
+/*window,dialog {
+	padding:6px;
+}
+/*移除检验扩展签名的警告*/
+.addon-view[notification="warning"] {
+    background-image: none !important;
+}
+.warning{display:none !important;}	
+/*WIN7系统下让浏览器边框透明*/
+#main-window #TabsToolbar:after {
+	display:none !Important;
+}
+/*https链接有提示的颜色加亮*/
+#urlbar[pageproxystate="valid"]>#identity-box.verifiedIdentity {
+	margin-top:-1px !important;
+	padding:0 0px 0 0 !important;
+	color:#eeeeee;
+	background:-moz-linear-gradient(#94BB44,#84AB34 10%,#5E9524 90%,#2C7C00);
+	text-shadow:#1a4d08 0px 1px 1px,#1a4d08 0px 0px 2px
+}
+/*windows7-windows8-winxp显示修正*/
+@media (-moz-os-version:windows-win8),(-moz-os-version:windows-win7),(-moz-os-version:windows-xp) {
+	#urlbar {
+	height:28px !important;
+}
+#searchbar .searchbar-textbox {
+	height:28px !important;
+}
+#nav-bar {
+	background:#F2F2F2 !important;
+}
+#nav-bar > * {
+	margin-top:-5px !important;
+	margin-bottom:-5px !important;
+}
+#nav-bar {
+	border-top:0px solid #FFF !important;
+}
+}@media (-moz-os-version:windows-win8),(-moz-os-version:windows-win7) {
+	#TabsToolbar .arrowscrollbox-scrollbox {
+	margin-left:0px !important;
+}
+}@media (-moz-os-version:windows-xp) {
+	#alltabs-button {
+	margin-right:20px !important;
+}
+}}

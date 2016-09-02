@@ -1,0 +1,27 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+/* i really want this to be global */
+
+span.sej_container {
+ position: fixed !important;
+ top: 40px;
+ right: 10px;
+ width: 50px;
+ height: 26px !important;
+ z-index: 999 !important;
+ background: rgba(255, 255, 255, .8);
+ 
+ display: block !important;
+ padding: 15px 10px !important;
+ transition: all .5s ease 5s;
+}
+span.sej_container>span {transition: all .5s ease 5s;}
+
+span.sej_container:hover {z-index: 99999 !important; width: 50%; height: 50px !important; transition: all 0s ease 0s; padding-left: 60px !important; background: rgba(255, 255, 255, .95);}
+
+span.sej_container:hover>span {margin-left: -50px; transition: all 0s ease 0s; }
+span.sej_container>a {display: inline-block; min-width: 30px !important; visibility: hidden; padding: 0 4px; transition: all .5s ease 4.6s;}
+span.sej_container:hover>a {visibility: visible; transition: all 0s ease 0s;}
+span.sej_container>a:hover {background: #FFFFCC;}
+
+span.sej_drop-down-list {z-index: 100000 !important;}
+span.sej_drop-down-list>a {padding: 3px;}

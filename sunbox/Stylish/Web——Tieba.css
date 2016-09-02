@@ -1,0 +1,167 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+/*背景图片*/
+@-moz-document url-prefix("http://tieba.baidu.com/f"),
+url-prefix("http://tieba.baidu.com/")/*该网址为牛牛添加*/,url-prefix("http://tieba.baidu.com/p"),url-prefix("http://tieba.baidu.com/i"),url-prefix("http://tieba.baidu.com/bawu2/postaudit/tlist?kw="),url-prefix("http://tieba.baidu.com/bawu2/postaudit/plist?kw="),url-prefix("http://tieba.baidu.com/bawu2/postaudit/slist?kw="),url-prefix("http://c.tieba.baidu.com/"),url-prefix("http://v.tieba.com/"){
+/*-------------会员、贴吧商城、T豆、T秀特权、彩蛋、投注、彩票、沙发-----------*/
+.u_app_wrap/*客户端*/,[class*="baiduPrivilege"]/*特权*/,
+.u_menu_appcenterEntrance/*应用中心*/,.split,.u_split /*置顶用户导航分割线*/,
+[class*="joinvip"] /*开通会员*/ {display:none !Important;} /*置顶用户导航*/
+/*贴吧头部大广告位*/
+#platform_iframe_head,.app_iframe,.top-sec.clearfix,#top_activity /*部分贴吧头部各类广告*/ ,
+.app_forum_top_nav,.gambling_town_cnt,#xiu8_follow_warn,.app_header_main .ui_bubble_wrap,.simple_info_bg,.entertain_user_info /*T豆娱乐城吧*/,
+#plat_recom_carousel /*贴吧头部大广告位*/
+{display:none !Important;}
+#com_userbar_message {display:none !important;} /*置顶气泡提醒-T豆商城信息*/
+[class*="supervip"],[style*="left: 206.5px;"] {display:none !important;} /*超级会员*/
+.edui-btn.edui-btn-medal {display:none !important;} /*发帖框-T秀特权*/
+.d_nameplate,.profile_bottom{display:none !important;} /*会员黄金铭牌*/
+[class*="golden_id"] {background:none !important;} /*黄金ID特权*/
+[class*="tshow"]{display:none !important;} /*会员T秀*/
+[id*="tbmall"],[class*="tbmall"]{display:none !important;} /*贴吧商城*/
+[class*="doupiao"] {display:none !important;}/*豆票*/
+.tbui_fbar_props,.guide_wrap_magic {display:none !important;}/*右侧悬浮工具条-魔法道具*/
+.save_face_bg/*挽尊*/,.umoney-promotion-dialog/*免费领取-挽尊卡*/ {display:none !important;}
+.p_mall_tail,.props_item_tail {display:none !important;} /*魔法道具使用后尾巴提示*/
+.guessing_watermark,.add_guessing_btn {display:none !important;} /*猜拳*/
+.lot_wrap_head.clearfix,[class*="lottery"]{display:none !important;} /*投注、彩票*/
+.residual_wrap_worship,.residual_wrap_egg {display:none !important;} /*帖内头像-魔法道具效果（膜拜、臭鸡蛋）*/
+[style*="z-index: 1001;"] {display:none !important;} /* 鼠标经过出现的气泡提醒“T秀特权-我想要”*/
+.p_author_face.j_frame_guide {background:none !important;border:solid 0px #ccc !important;} /*帖内头像-图像边框*/
+.userinfo_head{background:none !important;border:solid 0px #bbb !important;} /*ID卡片头像-图像边框*/
+#celebrity,.celebrity {display:none !important;} /*右侧-本吧特权礼包*/
+.user_score {display:none !important;} /*右侧-我在贴吧-ID下T豆数量*/
+[class*="j_click_"] /*右上图链广告-主播广场*/,
+[id*="sofa_post"] {display:none !important;} /*抢沙发位*/
+#global_notice_wrap,[class*="firework"] {display:none !important;} /*贴吧各种放烟花*/
+[class*="reward"],[title="打赏"],.icon_pre {display:none !important;} /*打赏*/
+[id*="bonus_forum_aside"] {display:none !important;} /*贴吧贡献榜*/
+#thread_list [style*="background: url"] {background:none !important} /*贴吧大厅-会员帖背景*/
+#paypost_guide {display:none !important;} /*发帖框-“付费可见”小熊提醒*/
+/*----------------------文字----------------------*/
+.vip_red {color:#2D64B3 !important;} /*贴吧大厅-会员ID颜色*/
+.core_title_txt,[class*="member_red"] {color:#333333 !important;} /*帖内会员标题颜色*/
+[class*="highlight"] {color: #FE6310 !important;} /*强制橙名ID*/
+.j_th_tit:link {color:#296EB3 !important;} /*整体标题颜色-未点击*/
+.j_th_tit:hover {color:#458BB0 !important;} /*整体标题颜色-鼠标触摸*/
+.j_th_tit:visited {color: #653096 !important;} /*整体标题颜色-点击后*/
+/*----------------------徽章、勋章、小图标、印迹、标识----------------------*/
+.frs_bright_icons {display:none !important;} /*贴吧大厅-ID后印迹标识*/
+.d_icons {display:none !important;} /*帖内-ID下印迹标识*/
+[class*="tbworld"]{display:none !important;} /*ID前-会员标识*/
+.member .forum_level {display:none !important;} /*吧务页右上-等级星标*/
+[class*="icon-new"],[class*="icon_new"],.nav_item_hot_flag {display:none !important;} /*“NEW”、“HOT”*/
+[class*="achievement"]{display:none !important} /*帖内-徽章成就*/
+/*----------------------广告类、贴吧推广----------------------*/
+/*贴吧推广、游戏、[data-daid]、主播类、帖内楼层间插播广告、其他广告类模块*/
+.banner_post,
+[class*="BAIDU_CLB_AD"],
+[class*="thread_recommend"]/*本帖相关、本吧精品*/ ,
+[class*="spreadad"],[id*="dasense"] /*贴吧大厅推荐帖（美女主播等）*/ ,
+[class*="j_click_"] /*右上图链广告-主播广场*/,
+.j_play_list_panel /*帖子列表广告模块-主播广场*/,
+.t_con.clearfix,[id*="cpro_"],#thread_list li[data-daid] /*帖子列表-贴吧推广*/ ,
+.j_df_card.thread_top /*帖子列表-地区类贴吧推广*/ ,
+#j_p_postlist [data-daid] /*帖内-来自ID“贴吧游戏”*/ ,
+DIV[data-daid] /*贴吧边侧-“千万T豆任你拿”*/ ,
+.my_app /*贴吧右侧-我的应用*/,
+.life_helper /*贴吧右侧-生活助手*/
+{display:none !important;} 
+/*视频互动、游戏直播、美女直播、各种视频推荐*/ 
+[class*="live_show"],[class*="liveshow"],[class*="per_list"]{display:none !important;}
+#pb_adbanner {display:none !important;} /*帖内上方广告位*/
+#containerWrap,#uptown,#union_mod,#aside_ad {display:none !important;} /*帖内右侧广告位*/
+.edui-btn-voice/*发帖框语音按钮*/,[class*="voice_ad"] {display:none !important;} /*语音广告*/
+.tb_poster_placeholder a {display:none !important;} /*发帖框-3倍经验*/
+#search_button {display:none !important;} /*贴吧大厅右上链接广告*/
+#pop_animate,.baidutuisong,[id*="window_text"] {display:none !important;} /*右下弹窗（文本窗口）*/
+#search_bottomad,#search_union_mod {display:none !important;} /*贴吧搜索页广告*/
+#forum_recommend {display:none !important;} /*贴吧大厅底部推荐（你可能感兴趣的贴吧）*/
+#plat_act_wrapper {display:none !important;} /*贴吧首页-中间广告位*/
+#tbLcsSwf {display:none !important;} /*I贴吧左上不知名FLASH窗口*/
+[class*="couplet"],[class*="advertise"],#platform_left_float {display:none !important;} /*贴吧侧边广告*/
+[class*="star_bus"] {display:none !Important;} /*巴士-星愿环游*/
+.platform_aside_tieba_partner {display:none !important;} /*右侧-贴吧合伙人*/
+.download.mobile_res {display:none !important;} /*图片右侧-下载图片到手机*/
+[id*="questionnaire"] {display:none !important;} /*全屏-问卷调查*/
+/*----------------------游戏----------------------*/
+[class*="game"],[id*="game"] {display:none !important;} /*游戏*/
+[class*=u9] {display:none !important;} /*游戏吧-热门卡包、领号等*/
+.qipai_thread {display:none !important;} /*T豆小游戏*/
+[id*="bdyx_tips"],[class*="bdyx_tips"] {display:none !important;} /*百度游戏右下弹窗*/
+.floor_index,[id*="wanle"],[class*="wanle"] {display:none !important;} /*玩乐*/
+#duoku_servers_list {display:none !important;} /*游戏类贴吧-右下“多酷”*/
+/*----------------------其他----------------------*/
+#aside {position:absolute;margin-left:0px;
+;width:239px!important;float:right !important;} /*贴吧右侧整列模块跑偏↓*/
+#panel {width:auto !important;height:auto !Important;overflow:hidden !important;} /*对 ID CARD 旧版名片的支持-去滚动条*/
+.pop-up-frame {height:auto!important;} /*贴吧首页——修复常逛贴吧显示出错——错过的指尖 提供*/
+[id*="post_content"] {width:auto !important;overflow-x:hidden !important;} /*防帖内内容横向溢出*/
+/*回复框区碍眼物*/
+.success-foot-tip  /*发表回复瞬间气泡提示广告*/,
+.tb_poster_placeholder A, /*帖内回帖框中“3倍经验”链接广告*/
+[class*="success_exp"],#progressBar /*回帖框发表帖子【经验+1】*/
+{display:none !Important;} 
+.tieba_notice_theme2 {display:none !important;} /*帖内右侧-贴吧公告*/
+.poster_head_surveillance {font-size:0px !important;} /*贴吧协议“七条底线”一列文字*/
+.poster_head_surveillance a {display:none !important;} /*贴吧协议“七条底线”一列链接*/
+[class*="share"] {display:none !important;} /*各种“分享”*/
+#selectsearch-icon {display:none !important;} /*划词搜索按钮*/
+#main_aside .ui_bubble_wrap {display:none !important;} /*I贴吧-回收站改版通知*/
+.dialogJmodal {display:none !important;} /*上传图片等操作的全屏暗色背景限制*/
+/*-----------------------帖内宽屏----------------------*/
+/*帖内宽屏*/
+.right_section.right_bright {display:none !important;} /*帖内右侧模块整体消失*/
+/*帖内标题*/
+#j_core_title_wrap{width:978px !Important;} 
+.l_post{width:975px !Important;} 
+.d_post_content_main{width:820px !Important;}
+/*楼中楼拉宽*/
+.core_reply .j_lzl_c_b_a.core_reply_content{width:773px !Important;border:none !important;}
+.core_reply .j_lzl_container.core_reply_wrapper{width:auto !Important;}
+.core_reply .edui-editor-body{width:753px !Important;}
+.core_reply #j_editor_for_container{width:auto !Important;}
+.core_reply .lzl_panel_wrapper{margin-left:240px !Important;}
+/*帖内回复框*/
+.pb_footer .edui-editor-body,.pb_footer .old_style_wrapper {width:690px !Important;} /*内外框*/
+.pb_footer .edui-toolbar,.edui-btn-toolbar{width:670px !Important;} /*回复框工具条*/
+.pb_footer #ueditor_replace {width:auto !Important;} /*回复内容*/
+.pb_footer #tb_rich_poster {margin-left:120px !important;} /*帖内回复框位置*/
+#progressBar {display:none !Important;} /*上层隔挡，不知道是啥*/
+/*-----------------------显示方式----------------------*/
+.j_user_sign,.d_sign_split {display:none !important;} /*屏蔽签名档*/
+.p_author_face IMG,.p_author_face {height:100px !important;width:100px !important;} /*帖内头像图片+白色外框*/
+.louzhubiaoshi {position:absolute !important;z-index:1 !important;} /*头像-楼主标识*/
+/*右上消息通知显示方式：右上角悬浮固定、自动隐藏（鼠标触摸恢复）*/
+#com_userbar{position: fixed !important;opacity:0;transition:0.5s ease all;}
+#com_userbar:hover{opacity:1;transition:0.5s ease all;}
+/*消息通知、私信计数器（数字）样式-屏蔽*/
+#com_userbar > UL > LI:nth-child(4) > DIV:last-child > A > SPAN {display:none !important;}
+/*置顶消息计数器——保留项目名，干掉计数器（红色数字）*/
+.unread_num {margin-right:13px !important;} /*计数器位置*/
+A[data-type="friendapply"] /*好友申请*/ ,
+A[data-type="favts"] .unread_num.clearfix /*我的收藏-计数器*/ ,
+.j_category_item_last .unread_num.clearfix /*我的通知-计数器*/
+{display:none !important;}
+.core_title_absolute_bright {display:none !important;} /*帖内-下拉出现悬浮标题*/
+.search_main.clearfix.search_main_fixed {display:none !important;} /*贴吧大厅-下拉出现悬浮搜索框*/
+/*普通贴吧头部各种信息（关注按钮等）——平时隐藏，鼠标触摸显示——引用 云中慕 代码*/
+.user_post_li/*查看发帖脚本*/,.icon_thread_hidden,#j_head_focus_btn,.cancel_focus,.card_num,.card_info,.head_skin_btn,.j_jb_ele/*帖内“举报”链接*/,.opui-barrage-setup/*话题帖-“展开弹幕”按钮*/,.toggleBtn/*贴吧头部-指引按钮*/ {opacity: 0!important;-moz-transition: opacity .25s ease-in-out;-webkit-transition: opacity .25s ease-in-out;-o-transition: opacity .25s ease-in-out;}
+.user_post_li:hover/*查看发帖脚本*/,.icon_thread_hidden:hover,.card_top:hover #j_head_focus_btn,.card_top:hover .head_skin_btn,.card_top:hover .cancel_focus,.card_top:hover .card_num,.card_top:hover .card_info,.star_header.clearfix:hover #j_head_focus_btn,.j_jb_ele:hover/*帖内“举报”链接*/,.plat_head.plat_head_theme1:hover #j_head_focus_btn/*游戏吧版头1*/,.plat_head.plat_head_theme2:hover #j_head_focus_btn/*游戏吧版头2*/,.opui-barrage-setup:hover/*话题帖-“展开弹幕”按钮*/,.top_content:hover .toggleBtn/*贴吧头部-指引按钮*/ {opacity: 1!important;}
+.user-hide-post-down {display:none !important;} /*屏蔽他人3天按钮*/
+#balv_mod,#balv_mod_user_currforum,#my_tieba_mod,.my_tieba {display:none !important;} /*右侧-我在贴吧、我在本吧*/
+#threadListGroupCnt {display:none !important;}
+DIV[class*="d_post_content"] .ps_cb, DIV[class*="d_post_content"] .comforum-swap-words {pointer-events:none !important;color:#000 !important;} /*帖内文字超链接（星梦XMMX、zentu 提供）*/
+/*-----------------右侧悬浮工具条（右侧导航）----------------*/
+/*右侧漂浮工具条-鼠标触摸显示*/
+.tbui_afb_compact {margin-right:-35px !important;width:45px !important;opacity: 0.5!important;-moz-transition:0.2s ease all;-moz-transition-delay: 0.2s;}
+.tbui_afb_compact:hover {margin-right:-6px !important;width:43px !important;opacity: 1!important;-moz-transition:0.1s ease all;-moz-transition-delay: 0.1s;}
+/*屏蔽的项目*/
+#jswf_1395244212536 /*触摸“魔法道具”按钮弹出的FLASH向导*/,
+.tbui_aside_fbar_button.tbui_fbar_props /*“魔法道具”按钮*/,
+.tbui_aside_fbar_button.tbui_fbar_share /*分享*/,
+.tbui_aside_fbar_button.tbui_fbar_game /*推荐游戏*/ {display:none !important;} 
+LI.tbui_aside_fbar_button.tbui_fbar_favor,.tbui_aside_favor_list.clearfix{
+display:None !important} /*爱逛的贴吧+爱逛贴吧二级列表，选择性显示*/
+.top_cont {height:5px !Important;-moz-transition:0.5s ease all;-moz-transition-delay: 0.5s;} /*贴吧头部指引模块-鼠标触摸显示*/
+.top_cont:Hover {height:150px !Important;-moz-transition:0.4s ease all;-moz-transition-delay: 0.1s;} /*贴吧头部指引模块-鼠标触摸显示*/
+}

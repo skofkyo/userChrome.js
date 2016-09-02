@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html><head>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://sunbox.cc/">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<title>jquery前端设计辅助工具 css格式化压缩 js压缩格式化</title>
+<script type="text/javascript" src="js/jquery-1.js"></script>
+<style>
+h3{ font-family:"Arial"; font-size:30px; color:#666; margin:20px 0 10px 0; text-shadow:2px 2px #fff;}
+#content{ font-size:12px; border-radius: 2px; border:1px solid #bbb; *border-color:#bbb #e9e9e9 #e9e9e9 #bbb; color:#325AA3; box-shadow:0 0 5px #ddd inset; overflow:auto;width:900px; height:400px;  padding:5px; background-color:#fff; margin:5px 0;}
+#code{ width:920px; height:auto; overflow:hidden; margin:50px auto;}
+.btn1{outline:none; background:#82ce18; font-size:14px; cursor:pointer; display:inline-block; text-decoration:none; padding:10px; border:1px solid #82ce18; color:#fff; width:120px; border-radius:2px; margin:5px 15px 0 0; text-shadow:-1px -1px #305CAA; font-weight:bold; letter-spacing:3px;}
+.cur1{outline:none; background:#FF9900; font-size:14px; cursor:pointer; display:inline-block; text-decoration:none; padding:10px; border:1px solid #FF9900; color:#000; width:120px; border-radius:2px; margin:5px 15px 0 0; text-shadow:-1px -1px #305CAA; font-weight:bold; letter-spacing:3px;}
+</style>
+
+<script type="text/javascript" src="js/my.js"></script>
+<script type="text/javascript" src="js/Words.js"></script>
+<script type="text/javascript" src="js/jsformat.js"></script>
+<script type="text/javascript" src="js/Packer.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){	
+	$("#btn").click(function(){
+		var packer = new Packer;
+		var c = $("#content").val();	
+		if (c.length<=0 || c=="请输入内容")
+		{
+			$("#content").val("请输入内容");
+			
+		}else{
+			var v = packer.pack(c, true, true);
+			$("#content").val(v);
+		}
+	});	
+
+	
+	$('.btn1').live('mouseover', function(){	
+		$(this).addClass("cur1");	
+	}).live('mouseout', function(){	
+		$(this).removeClass("cur1");	
+	});
+	
+	$("#btnDecode").click(function(){
+		var c = $("#content").val();	
+		if (c.length<=0 || c=="请输入内容")
+		{
+			$("#content").val("请输入内容");
+			
+		}else{		
+			var r = eval(c.slice(4));		
+			r = r.replace(/^\s+/, '');   
+			if (r && r.charAt(0) === '<') {
+				r = style_html(r, 4, ' ', 80);
+			} else {
+				r = js_beautify(r, 4, ' ');
+			}
+			$("#content").val(r);
+		}
+	});
+	
+	$("#btnJSFormat").click(function(){
+		var r = $("#content").val();	
+		r = r.replace(/^\s+/, ''); 
+        if (r && r.charAt(0) === '<') {
+            r = style_html(r, 4, ' ', 80);
+        } else {
+            r = js_beautify(r, 4, ' ');
+        }
+		$("#content").val(r);
+	});
+	
+	$("#btnJSYS").click(function(){		
+		var c = $("#content").val();
+		if (c.length<=0 || c=="请输入内容")
+		{
+			$("#content").val("请输入内容");
+			
+		}else{
+			var v = jsmin("", c, 2);
+			$("#content").val(v);
+			alert("原来大小"+jsmin.oldSize+" 压缩后大小："+jsmin.newSize+"  压缩率为："+(Math.round(jsmin.newSize / jsmin.oldSize * 1000) / 10) + '%');
+		}
+	});
+	
+	$("#btnCSSFormat").click(function(){
+		CSS('format');
+	});
+	
+	$("#btnCSSYS").click(function(){
+		CSS('pack');
+	});
+});
+
+
+<!--
+    var lCSSCoder = {
+        format: function (s) {//格式化代码
+            s = s.replace(/\s*([\{\}\:\;\,])\s*/g, "$1");
+            s = s.replace(/;\s*;/g, ";"); //清除连续分号
+            s = s.replace(/\,[\s\.\#\d]*{/g, "{");
+            s = s.replace(/([^\s])\{([^\s])/g, "$1 {\n\t$2");
+            s = s.replace(/([^\s])\}([^\n]*)/g, "$1\n}\n$2");
+            s = s.replace(/([^\s]);([^\s\}])/g, "$1;\n\t$2");
+            return s;
+        },
+        pack: function (s) {//压缩代码
+            s = s.replace(/\/\*(.|\n)*?\*\//g, ""); //删除注释
+            s = s.replace(/\s*([\{\}\:\;\,])\s*/g, "$1");
+            s = s.replace(/\,[\s\.\#\d]*\{/g, "{"); //容错处理
+            s = s.replace(/;\s*;/g, ";"); //清除连续分号
+            s = s.match(/^\s*(\S+(\s+\S+)*)\s*$/); //去掉首尾空白
+            return (s == null) ? "" : s[1];
+        }
+    };
+    function CSS(s) {
+		var r = $("#content").val();
+        r = lCSSCoder[s](r);
+		$("#content").val(r);
+    }
+//-->
+
+</script>
+<script id="picviewer-page-script">(function (messageID){
+"use strict";
+
+		var frameID=Math.random();
+		var frames={
+			top:window.top,
+		};
+
+		window.addEventListener('message',function(e){
+			var data=e.data;
+			if( !data || !data.messageID || data.messageID != messageID )return;//通信ID认证
+			var source=e.source;
+			if(source===window){//来自contentscript,发送出去,或者干嘛。
+				if(data.to){
+					data.from=frameID;
+					frames[data.to].postMessage(data,'*');
+				}else{
+					switch(data.command){
+						case 'getIframeObject':{
+							var frameWindow=frames[data.windowId];
+							var iframes=document.getElementsByTagName('iframe');
+							var iframe;
+							var targetIframe;
+							for(var i=iframes.length-1 ; i>=0 ; i--){
+								iframe=iframes[i];
+								if(iframe.contentWindow===frameWindow){
+									targetIframe=iframe;
+									break;
+								};
+							};
+							var cusEvent=document.createEvent('CustomEvent');
+							cusEvent.initCustomEvent('pv-getIframeObject',false,false,targetIframe);
+							document.dispatchEvent(cusEvent);
+						}break;
+					};
+				};
+
+			}else{//来自别的窗口的，contentscript可以直接接收，这里保存下来自的窗口的引用
+				frames[data.from]=source;
+			};
+		},true)
+	})("pv-0.5106795670312598")</script></head>
+
+<body>
+
+<div id="code">
+<h3>在线JS混淆/解混淆、JS格式化/压缩、CSS格式化/压缩</h3>
+<textarea id="content">/* 
+ *
+ * 提供JS混淆、JS解混淆、JS压缩、JS格式化、CSS格式化、CSS压缩
+ *
+ * 本程序使用最简单的原理实现，另存为就可以在本地使用
+ *
+ * 供大家方便使用-阳光盒子
+ *
+ */
+</textarea><br>
+<input id="btn" value="混淆" class="btn1" type="button">
+<input id="btnDecode" value="解混淆" class="btn1" type="button">
+<input id="btnJSFormat" value="JS格式化" class="btn1" type="button">
+<input id="btnJSYS" value="JS压缩" class="btn1" type="button">
+<input id="btnCSSFormat" value="CSS格式化" class="btn1" type="button">
+<input id="btnCSSYS" value="CSS压缩" class="btn1" type="button">
+</div>
+<div style="text-align:center;clear:both">
+</div>
+
+</body></html>

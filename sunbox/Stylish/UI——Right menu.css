@@ -1,0 +1,91 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url(chrome://browser/content/browser.xul) {
+/*=======================右键菜单定制============================*/
+/* 右键菜单宽度 */
+/*#contentAreaContextMenu menuitem{min-width:160px !important;max-width:180px !important;}*/
+/*============================隐藏无用菜单项===========================*/
+/*==Page==*/
+#contentAreaContextMenu .menu-iconic-accel,
+/*#context-back,
+#context-forward,
+#context-reload,
+#context-stop,
+#context-bookmarkpage,
+#context-navigation,*/
+#context-savepage,
+#context-viewbgimage,
+#context-selectall,
+#context-viewinfo,
+#context-sep-viewsource,
+#context-viewsource,
+#uacontrol_options,
+#inspect-separator,
+#context-pocket,
+#bamboo-contextmenu-blockimage,
+#userstyle-sorting-type,
+#greasemonkey-sort-bar>*,
+#askCortana,
+#showFlagS-sepalator2,
+#greasemonkey-sort-bar,
+#BMB_viewBookmarksToolbar,
+#identity-icon-label,
+#xnotifier-bookmark,
+#SimpleMail-content-send-menu,      
+/*==on Link==*/
+#context-openlinkintab,
+#context-openlink,
+#context-openlinkprivate,
+#context-bookmarklink,
+#context-sep-selectall,
+#context-openlinkincurrent,
+#context-savelinktopocket,
+/* on selected */
+#context-searchselect,
+#spell-check-enabled,
+#context-viewpartialsource-selection,
+/*==input==*/
+#spell-separator,
+#spell-add-dictionaries-main,
+#context-sep-paste,
+#context-keywordfield,
+/*on image*/
+#context-copyimage,
+#context-sep-viewbgimage,
+#context-viewimage,
+#context-sendimage,
+#context-copyimage-contents,
+#context-setDesktopBackground,
+#context-sep-copylink,
+/*addons*/
+#abppa-contextmenu,
+#flashgot-context-separator,
+#lpt_lplogintolastpass,
+#readable_by_evernote__context_menu{display: none !important;}
+
+/*======================添加右键图标==================*/
+#xThunderDownloadAll{
+    -moz-binding:url("chrome://global/content/bindings/menu.xml#menuitem-iconic")!important;
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAkFBMVEXtK4Tt7e3a19nkjbXuR5TsQI/8+fvr6+vtNInx8fHlrcfvbajuWZ3tU5rsTJbtO4339/f09PT77/Ty7O/x6e3y3+jn5+f50+Xzz+De3t7a2driob/nm77kjrbveK/xXqLtLobx8PH07vD26/Dt2OHrzNrtxtjiztfiy9bow9TsudDhuczpsMrissjwj7zwgrSddp2OAAAAfElEQVQY043N1w6DMAwFULcEmtUAZZRdutn8/98ROULiCXFeLF/LNhz0uDnOnewF17fnJe7akUpML9+PZlGZTEZhwBh7BmFiY1CLzwn9ZA2G/F60Tm2OtnE8rF+oogCKF3rfJTj9FxSQzRssY8otrSz7NDeDPDujzKJwwAK1ogcnlXdImQAAAABJRU5ErkJggg==")!important;
+    margin-left: 0px !important;
+}
+#xThunderDownload{
+    list-style-image: url("data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAASFBMVEXtK4Tm5ubs7OzrWJzvW5/od6v6+vr89fj39/f09PTx8fHh4eHf3d70kr/k0trwj7zrU5nn3uLfydPrpsbfqsLtiLbsgLLyaKfF51znAAAAUUlEQVQY043KSRKAIAxEUSQKGVBxvv9NtVBJZUfv/qt2rRtjjJeBEEJvABENzERkgZkNHN77rAmwPXBC/XTflh+GtydwVZKIlFZJa2mVPbvG3R/0Ah+2Hj7fAAAAAElFTkSuQmCC")!important;
+    margin-left: 0px !important;
+}
+.abp-contextmenuitem{
+    -moz-binding:url("chrome://global/content/bindings/menu.xml#menuitem-iconic")!important;
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAqFBMVEXfACT09PThSWHx8fHwvsbim6fie4zlUWngEzT5+fnu7u7v4uTqzNHkrLXopK/ojpzpcYXicoTkan3iKkf77/H07u/x6+zq6urk4eL01drq1tnm1djxzdP0xMzmxsvexMjhvsP1usPpusLmt77ytL7osbrlsLjerLTvp7LklaLclqHgjZvei5nlipjig5LlZnvjX3TdV2zkTGXlPFfhMk/eKEXiJELiHDwz4P1xAAAAcklEQVQY02MgCZgriqDwhWU5VeAcYxYNAUlOFg4Yn12UEQhkzOB8MRZuZmZmARjfSJ+fh5+bi4sPyjdQEmLn49GVEleFCmiyqQkK8copS5vArGPV42VjYpVggtvJoc2qwCYI5CNE1HXkQXwEMNUyJN6HAIoRBuos7J9/AAAAAElFTkSuQmCC")!important;
+    padding-left: 4px !important;
+}
+.abp-contextmenuitem > label{margin-left: 11px !important;}
+}   
+#uBlock0-blockElement .menu-iconic-icon{
+	display: none;
+}
+#uBlock0-blockElement .menu-iconic-left::before{
+	display: block;
+  content: "";
+  width: 16px;
+	height: 16px;
+	background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAqFBMVEXfACT09PThSWHx8fHwvsbim6fie4zlUWngEzT5+fnu7u7v4uTqzNHkrLXopK/ojpzpcYXicoTkan3iKkf77/H07u/x6+zq6urk4eL01drq1tnm1djxzdP0xMzmxsvexMjhvsP1usPpusLmt77ytL7osbrlsLjerLTvp7LklaLclqHgjZvei5nlipjig5LlZnvjX3TdV2zkTGXlPFfhMk/eKEXiJELiHDwz4P1xAAAAcklEQVQY02MgCZgriqDwhWU5VeAcYxYNAUlOFg4Yn12UEQhkzOB8MRZuZmZmARjfSJ+fh5+bi4sPyjdQEmLn49GVEleFCmiyqQkK8copS5vArGPV42VjYpVggtvJoc2qwCYI5CNE1HXkQXwEMNUyJN6HAIoRBuos7J9/AAAAAElFTkSuQmCC") no-repeat;
+}

@@ -1,0 +1,80 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url(chrome://browser/content/browser.xul) {
+/*去掉Win7下Australis标签栏自带背景*/
+#main-window #TabsToolbar:after {display: none !Important;}
+
+/* =====================去原弧形标签==================== */
+/*去弧形标签*/
+#TabsToolbar .tab-background-middle,
+#TabsToolbar .tab-background{margin:0 !important; background: transparent !important;}
+
+/*去标签前后弧形*/
+#TabsToolbar .tab-background-start,
+#TabsToolbar .tab-background-end{display: none !important;}
+
+/*标签最左边到边框的距离，自己调吧，各人口味不同啊*/
+#TabsToolbar .arrowscrollbox-scrollbox {padding-left:0px !important;}
+
+/*非当前标签页文字*/
+tab:not([selected="true"] ) {
+  color: rgba(0,0,0,0.75) !important;
+}  
+  
+/* 彩色标签 */
+/*.tabbrowser-tab:nth-child(6n+1){background:#717774 !important;}/*深瓦灰*/
+/*.tabbrowser-tab:nth-child(6n+2){background:#349e69 !important;}/*冬瓜绿*/
+/*.tabbrowser-tab:nth-child(6n+3){background:#cc99ff !important;}/*浅石英紫*/
+/*.tabbrowser-tab:nth-child(6n+4){background:#ffc34d !important;}/*向日黄*/
+/*.tabbrowser-tab:nth-child(6n+5){background:#2c80c5 !important;}/*毛月色*/
+/*.tabbrowser-tab:nth-child(6n+6){background:#ffb3b3 !important;}/*十样锦*/
+
+/* ==========================重建新标签========================== */
+/*设置新建标签按钮*/
+#TabsToolbar .tabs-newtab-button{
+    background:none!important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 5px !important;}
+
+/*设置选中标签*/
+#TabsToolbar .tabbrowser-tab[selected]{background:#F7F7F7!important;}
+  
+/*标签圆角*/
+/*#TabsToolbar .tabbrowser-tab[selected]{border-radius
+:3px 3px 0 0!important;}  
+
+/*设置鼠标指向新建标签按钮、标签时*/
+#TabsToolbar .tabs-newtab-button:hover,
+#TabsToolbar .tabbrowser-tab:hover:not([selected]){background-color: rgba(255,255,255,.33) !important;}
+
+/*修复固定标签*/
+#TabsToolbar .tab-background-middle[pinned="true"]{min-height:28px!important;}
+  
+/*标签之间间隔竖线*/ 
+/*  
+.tabs-newtab-button:-moz-locale-dir(ltr),
+.tabbrowser-tab:not(:first-of-type):not([afterselected]):not([selected]):-moz-locale-dir(ltr)	{
+		box-shadow: -5px 0 0 -4px rgba(255, 255, 255, .4);
+}  
+  
+/*当前标签页添加醒目横线*/  
+/*tab[selected] .tab-content {
+	background:linear-gradient(180deg,#FF4500 3px,#F7F7F7 1px);
+}  
+
+/*所有标签页都有背景*/
+/*#TabsToolbar .tabbrowser-tab {
+-moz-border-top-colors: none !important;
+-moz-border-left-colors: none !important;
+-moz-border-right-colors: none !important;
+-moz-border-bottom-colors: none !important;
+background: rgba(245,245,245,100) !important;
+border-color: rgba(224,224,224,100) !important;
+border-width: 0px 1px 0px 1px !important;
+margin-left: -1px !important;
+}
+#TabsToolbar .tabbrowser-tab:after,
+#TabsToolbar .tabbrowser-tab:before {
+display: none !important;
+}*/
+}

@@ -1,0 +1,90 @@
+/* AGENT_SHEET */
+@-moz-document  url-prefix("about:bamboo"){
+/*Bamboo*/
+#bamboo-toolbar-button-feed[state="new"] .toolbarbutton-text{
+	position: relative !important;
+	margin-left: -16px !important;
+	margin-bottom: 16px !important;
+	padding: 0 5px 0 2px !important;
+	height: 16px !important;
+	min-height: 16px !important;
+  background-color: rgb(244, 96, 96) !important;
+	border-radius: 8px !important;
+	color: white !important;
+	z-index: 1 !important;
+}
+#bamboo-toolbar-button-feed[state="normal"] .toolbarbutton-text{
+	display: none !important;
+}	
+/*滚动条美化*/
+scrollbar{
+	-moz-appearance: none !important;
+	-moz-transition: opacity .2s !important;
+	background: transparent !important;
+	opacity: 0.5 !important;
+}
+scrollbar[orient="vertical"]{
+	width: 8px !important;
+	border-width: 0 0 4px 0 !important;
+}
+scrollbar[orient="horizontal"]{
+	height: 8px !important;
+	border-width: 0 0 0 4px !important;
+}
+scrollbar:hover{
+	background-color: rgba(0,0,0,.05) !important;
+	opacity: 1 !important;
+}
+scrollbar[orient="vertical"]:hover{
+	box-shadow: inset 1px 0 0 rgba(0,0,0,.1) !important;
+}
+scrollbar[orient="horizontal"]:hover{
+	box-shadow: inset 0 1px 0 rgba(0,0,0,.1) !important;
+}
+scrollbar:active{
+	background-color: rgba(0,0,0,.05) !important;
+}
+scrollbar[orient="vertical"]:active{
+	box-shadow: inset 0 1px 0 rgba(0,0,0,.14),inset 0 -1px 0 rgba(0,0,0,.07) !important;
+}
+scrollbar[orient="horizontal"]:active{
+	box-shadow: inset 0 1px 0 rgba(0,0,0,.14),inset 0 -1px 0 rgba(0,0,0,.07) !important;
+}
+scrollbarbutton[sbattr="scrollbar-up-top"],scrollbarbutton[sbattr="scrollbar-down-top"],scrollbarbutton[sbattr="scrollbar-up-bottom"],scrollbarbutton[sbattr="scrollbar-down-bottom"]{
+	-moz-appearance: none !important;
+	display: none !important;
+}
+scrollbar thumb{
+	-moz-appearance: none !important;
+	-moz-transition: background-color .2s !important;
+	background-color: rgba(0,0,0,.2) !important;
+	border: none !important;
+}
+scrollbar thumb[orient="horizontal"]{
+	min-width: 28px !important;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07) !important;
+}
+scrollbar thumb[orient="vertical"]{
+	min-height: 28px !important;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset -1px 0 0 rgba(0,0,0,.07) !important;
+}
+scrollbar thumb:hover{
+	background-color: rgba(0,0,0,.4) !important;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,.25) !important;
+}
+scrollbar thumb:active{
+	background-color: rgba(0,0,0,0.5) !important;
+	box-shadow: inset 1px 1px 3px rgba(0,0,0,0.35) !important;
+}
+/* 去除垂直与水平滚动条相交汇的角落 */
+scrollbar scrollcorner {
+    display: none ! important;
+}
+}
+
+/*bamboo feed reader*/
+@-moz-document  url-prefix("about:bamboo"){
+#bamboo-area .bamboo-zone-view-data { 
+	max-width: 100% !important;
+}
+}

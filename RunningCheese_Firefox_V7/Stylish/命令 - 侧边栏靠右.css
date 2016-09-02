@@ -1,0 +1,12 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+hbox#browser {
+    direction: rtl !important;
+}
+hbox#browser > vbox {
+    direction: ltr !important;
+}
+
+#sidebar-box,#sidebar{
+    max-width:1280px !important;
+	min-width:5px !important;
+}

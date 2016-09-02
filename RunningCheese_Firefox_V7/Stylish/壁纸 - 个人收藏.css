@@ -1,0 +1,77 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+/*Superstart*/
+@-moz-document url("about:superstart") {
+	#bg {
+		background-image: url("http://www.runningcheese.com/cheese.php");       /*个人收藏 - 随机图片*/
+	  /*background-image: url("http://www.runningcheese.com/cheese00.php");*/ /*个人收藏 - 每日图片*/
+		/*background-image: url("http://www.runningcheese.com/cheese01.php");*/ /*个人收藏 - 风景名胜*/
+		/*background-image: url("http://www.runningcheese.com/cheese02.php");*/ /*个人收藏 - 动物植物*/
+		/*background-image: url("http://www.runningcheese.com/cheese03.php");*/ /*个人收藏 - 社会人文*/
+		/*background-image: url("http://www.runningcheese.com/cheese04.php");*/ /*个人收藏 - 魅力星空*/
+		/*background-image: url("http://www.runningcheese.com/cheese05.php");*/ /*个人收藏 - 极简主义*/ /*下同*/
+		background-repeat: repeat;
+		background-size: cover;
+	}
+}
+
+/*Newtab*/
+@-moz-document url("about:newtab") {
+	#newtab-vertical-margin {
+		background-image: url("http://www.runningcheese.com/cheese.php");
+	}
+}
+
+/*Home*/
+@-moz-document url("about:home") {
+	#snippetContainer, #brandLogo,#searchSubmit {		display: none;	}
+
+	body {
+		background-image: url("http://www.runningcheese.com/cheese.php"); 
+		background-repeat: repeat;
+		background-size: cover;
+	}
+
+	#topSection {
+		margin-left: -500px !important;
+		margin-bottom: 160px !important;
+	}
+
+	#searchText {
+		font-size: 14px !important;
+		border-radius: 5px!important;
+		max-height: 30px !important;
+		min-width: 500px !important;
+		box-shadow: none !important;
+	}
+
+	#searchText::-moz-placeholder {	color: transparent!important;	}
+
+	#searchIcon {
+		background: url("chrome://userchromejs/content/images/icons/search.png") center center no-repeat !important;
+		margin-top: -3px !important;
+	}
+  
+	#launcher,  #restorePreviousSession {
+		background: transparent !important;
+		border: none !important;
+		box-shadow: none !important;
+		margin-bottom: 50px !important;
+	}
+
+	#launcher,#aboutMozilla {
+		background-color: transparent!important;
+		border-top: none!important;
+		box-shadow: none!important;
+		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'>\
+    <feColorMatrix in='SourceGraphic' type='matrix' values=\
+   '0 0 0 0 1 \
+    0 0 0 0 1 \
+    0 0 0 0 1 \
+    0 0 0 1 0 '/></filter></svg>#invert") !important;
+	}
+
+/*按钮隐藏*/
+/*#launcher>button {opacity:0.5!important;transition:.5s;}
+	#launcher:hover>button {opacity: 1!important;	}*/
+}
