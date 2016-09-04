@@ -1,0 +1,21 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+/*————————————————吐槽弹幕网————————————————*/
+@-moz-document url-prefix("http://www.tucao.tv/list/") {
+body{background-image: none!important;}
+.header_logo{display: none!important;}
+.header_nav_bg{margin-top: 40px !important;}
+.right{display: none!important;}
+.left{width:100%!important;}
+}
+/*————————————————卡饭论坛————————————————*/
+@-moz-document url-prefix("http://bbs.kafan.cn/") {
+#ct > .mn > .comeing_box:nth-of-type(1){display: none!important;}
+#SWFUpload_0,#fmFlash{display: none;}
+}
+@-moz-document url-prefix("http://bbs.kafan.cn/forum.php?mod=post") {
+#SWFUpload_0,#fmFlash{display: inline!important;}
+}
+/* ————————————————样式编辑器———————————————— */
+@-moz-document url-prefix("data:text/html") {
+body{font-size: 14px!important;}
+}

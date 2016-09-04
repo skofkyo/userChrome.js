@@ -1,0 +1,2 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+*:not([class*="ico"]):not(i):not(.fa){font-family:"XHei Intel"!important;}

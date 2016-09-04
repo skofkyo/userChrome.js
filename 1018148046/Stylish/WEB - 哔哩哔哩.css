@@ -1,0 +1,20 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document url-prefix("http://www.bilibili.com/video/av"),
+url("http://www.bilibili.com/video/online.html") {
+  /*上方元素隐藏*/
+.header > .header-link,.header > .header-layer,.header > .h-center,.header > .num > .menu-wrapper > .menu-r,.header > .num > .menu-wrapper > .nav-menu > .m-i-last.m-i-live.m-i,.header > .num > .menu-wrapper > .nav-menu > .m-i-square.m-i{display:none;}
+  /*搜索框调整*/
+  .header .num .search{margin-top: 105px !important;}
+}
+@-moz-document domain("bilibili.com") {
+  /*头条去滤镜*/
+  .b-header-mask-bg{filter: none!important;}
+}
+/*HTML5Player*/
+@-moz-document url-prefix("http://www.bilibili.com/video/av") {
+  .bilibili-player .bilibili-player-area .bilibili-player-video-wrap .bilibili-player-video-danmaku .bilibili-danmaku{will-change: transform;}
+  #bilibiliPlayer.mode-webfullscreen .bilibili-player-video-wrap.bilibili-player-video-wrap-plus{height:100%!important;}
+  #bilibiliPlayer.mode-webfullscreen .bilibili-player-video-control{opacity: 0;transition: 0.2s ease-out 1.5s;position:absolute;bottom:0px;will-change:opacity;}
+  #bilibiliPlayer.mode-webfullscreen .bilibili-player-video-control:hover{opacity: 1;transition: 0.2s;}
+  #bilibiliPlayer.mode-webfullscreen .bilibili-player-video-sendbar{display: none;}
+}

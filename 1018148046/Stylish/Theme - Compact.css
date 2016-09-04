@@ -1,0 +1,147 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url("chrome://browser/content/browser.xul"){
+/*————————————————————标签栏————————————————————*/
+#TabsToolbar{margin: 0!important;border: none!important;}
+#TabsToolbar > #tabbrowser-tabs{border: none!important;margin: 0!important;}
+/*标签栏高度*/
+#TabsToolbar,#tabbrowser-tabs{padding: 0!important;min-height: unset!important;height:24px!important;}
+/*标签栏左右边距*/
+#TabsToolbar .arrowscrollbox-scrollbox{padding:0!important;}
+/*隐藏弧形标签*/
+#TabsToolbar .tab-background-start,#TabsToolbar .tab-background-end{display:none !important;}
+/*标签页内部背景*/
+#TabsToolbar .tab-background{margin:0!important;background: none!important;}
+#TabsToolbar .tab-background-middle{margin: 0!important;padding: 0!important;border: none!important;}
+/*标签页内部内容*/
+#TabsToolbar .tabbrowser-tab .tab-content {padding: 0 5px!important;}
+/*标签页标题字体*/
+#TabsToolbar .tabbrowser-tab .tab-content .tab-label{font-size: 110%;}
+/*标签页内部图标*/
+#TabsToolbar .tabbrowser-tab .tab-throbber,#TabsToolbar .tabbrowser-tab .tab-icon-image {margin: 0 5px 0 0!important;}
+#TabsToolbar .tabbrowser-tab[pinned="true"] .tab-throbber,#TabsToolbar .tabbrowser-tab[pinned="true"] .tab-icon-image{margin: 0 !important;}
+/*标签页静音按钮*/
+#TabsToolbar .tab-content> .tab-icon-sound{margin: 0!important;}
+/*新建标签按钮*/
+#TabsToolbar .tabs-newtab-button{margin:0!important;padding:0 3px!important;width:unset!important;border-radius: 1px 1px 0 0!important;}
+#TabsToolbar .tabs-newtab-button:hover{background:rgba(0,0,0,.15)!important;}
+/*标签关闭按钮*/
+#TabsToolbar .tab-close-button{margin: 0!important;}
+/*非当前标签隐藏关闭按钮*/
+#TabsToolbar .tabbrowser-tab .tab-close-button{display:none!important;}
+#TabsToolbar .tabbrowser-tab[selected]:not([pinned="true"]):hover .tab-close-button{display:-moz-box!important;}
+/*标签栏图标*/
+#TabsToolbar .toolbarbutton-1:not([disabled=true]):hover,#TabsToolbar .toolbarbutton-1[open],#TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled=true]):hover,.tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled=true]):hover,.tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled=true]):hover {background: rgba(0,0,0,.2)!important;}
+/*窗口控制按钮*/
+#titlebar-buttonbox{margin: 0!important;}
+#titlebar-buttonbox > .titlebar-button{display: inline!important;padding:6px 15px!important;border: none!important;-moz-appearance: none!important;}
+.titlebar-placeholder[type="caption-buttons"] {margin:0 0 0 10px!important;}
+/*————————————————————导航栏————————————————————*/
+#nav-bar{height: 30px!important;margin:0!important;padding:0!important;border: none!important;border-radius: 0!important;}
+/*导航栏下方1px*/
+#navigator-toolbox:after {display:none!important;}
+/*地址栏搜索栏*/
+#urlbar,.searchbar-textbox{margin:0!important;padding: 0!important;height:24px!important;min-height: unset!important;box-shadow: none!important;}
+/*地址栏容器*/
+#urlbar-wrapper{margin:0!important;clip-path: none!important;}
+/*隐藏地址栏下拉三角*/
+#urlbar .urlbar-history-dropmarker {display: none!important;}
+/*后退按钮*/
+#nav-bar #back-button{padding: 0 0 0 4px!important;border-radius:0!important;-moz-image-region: rect(0, 54px, 18px, 36px)!important;}
+#nav-bar #back-button > .toolbarbutton-icon {margin:0!important;padding: 2px!important;border-radius: 1px!important;}
+/*前进按钮*/
+#nav-bar #forward-button{padding:0!important;}
+#nav-bar #forward-button > .toolbarbutton-icon {margin: 0!important;padding: 2px!important;}
+#nav-bar #forward-button[disabled] {visibility: hidden;margin-left: -23px!important;transition-delay: 0s!important;}
+/*地址栏左侧图标*/
+#identity-box{padding: 0 2px!important;}
+#notification-popup-box{margin: 0!important;padding:0!important;border: none!important;background: none!important;}
+/*刷新按钮等*/
+#urlbar-go-button,#urlbar-reload-button,#urlbar-stop-button {margin:0!important;padding: 0 4px!important;}
+/*总是显示搜索转到按钮*/
+#searchbar > .searchbar-textbox > .search-go-container > .search-go-button{display: inline!important;padding: 0!important;}
+/*导航栏图标*/
+#nav-bar .toolbarbutton-1:not([type=menu-button]),
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {padding-top: 0!important;padding-bottom: 0!important;}
+#nav-bar .toolbaritem-combined-buttons{margin:0!important;}
+/*导航栏图标(menu,panel类型)*/
+#nav-bar .toolbarbutton-1[type=panel],
+#nav-bar .toolbarbutton-1[type=menu]:not(#back-button):not(#forward-button):not(#feed-button):not(#PanelUI-menu-button) {padding-right: 2px!important;padding-left: 2px!important;}
+/*导航栏图标内图片(所有图标全局定义)*/
+.findbar-button > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-badge-stack,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > .toolbarbutton-1:-moz-any([disabled],:not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon {padding: 2px!important;}
+/*导航栏图标内图片(非自带图标单独定义)*/
+#nav-bar .toolbarbutton-1:not(:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button)) > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not(:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button)) > .toolbarbutton-badge-stack,
+#nav-bar .toolbarbutton-1:not(:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button)) > .toolbarbutton-menubutton-button > .toolbarbutton-icon {padding: 3px!important;}
+/*导航栏图标内三角*/
+.toolbarbutton-1 > .toolbarbutton-menu-dropmarker {display: none!important;}
+/*导航栏图标三角按钮*/
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {padding-top:7.5px!important;padding-bottom:7.5px!important;}
+/*导航栏图标计数*/
+.toolbarbutton-badge {margin: -7px -5px 0 0 !important;padding: 0!important;background-color: rgba(255,0,0,0.7)!important;box-shadow: none!important;font-weight: normal!important;}
+/*书签按钮*/
+#nav-bar #bookmarks-menu-button[cui-areatype="toolbar"]:not([overflowedItem=true]) > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {padding-top: 2px!important;padding-bottom: 2px!important;}
+/*样式按钮*/
+#nav-bar #stylish-toolbar-button > .toolbarbutton-icon {-moz-padding-end: 3px!important;}
+/*————————————————————书签栏————————————————————*/
+#personal-bookmarks {min-height: unset!important;}
+#personal-bookmarks toolbarbutton.bookmark-item{padding: 2px 6px!important;-moz-appearance: none!important;border: none!important;font-size: 110%;}
+#personal-bookmarks toolbarbutton.bookmark-item:hover,#personal-bookmarks toolbarbutton.bookmark-item[open]{background: #9BD1FD!important;}
+/*————————————————————其他调整————————————————————*/
+/*关闭按钮*/
+.close-icon {list-style-image: url("chrome://global/skin/icons/close-XPVista7.png")!important;;-moz-image-region: rect(0, 16px, 16px, 0)!important;;}
+.close-icon:hover {-moz-image-region: rect(0, 32px, 16px, 16px)!important;;}
+.close-icon:hover:active {-moz-image-region: rect(0, 48px, 16px, 32px)!important;;}
+.close-icon > .button-icon, .close-icon > .button-box > .button-icon, .close-icon > .toolbarbutton-icon {width: 16px!important;;}
+/*网页内容左右黑条*/
+#browser-border-start,#browser-border-end{display: none!important;}
+/*固定标签页右键不隐藏菜单*/
+#context_closeTabsToTheEnd,#context_closeOtherTabs{display: -moz-box!important;}
+/*粘贴并转到置顶*/
+#urlbar .urlbar-textbox-container menuitem[anonid="paste-and-go"],#searchbar  .searchbar-textbox  menuitem[anonid="paste-and-search"]{-moz-box-ordinal-group:0;}
+/*全屏模式下显示书签栏*/
+#main-window[inFullscreen="true"] #PersonalToolbar{visibility:visible !important;}
+/*窗口模式下标签栏置顶*/
+#main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen])[chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,#main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen]) #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar{margin: 0px!important;}
+#main-window[sizemode="normal"] > #titlebar {-moz-appearance: none!important;}
+/*隐藏登陆同步*/
+#PanelUI-footer-fxa{display: none!important;}
+/*搜索菜单*/
+#context-searchselect{max-width: 18em!important;}
+/*————————————————————菜单隐藏————————————————————*/
+/*隐藏菜单*/
+#context_openTabInWindow,#context_reloadAllTabs,#context_bookmarkAllTabs,#context_undoCloseTab,#context_toggleMuteTab,#context_openNonRemoteWindow,/*标签栏*/
+#PersonalToolbar .bookmarks-actions-menuseparator,#PersonalToolbar .openintabs-menuitem,/*书签栏*/
+#context-selectall,#context-sep-viewsource,#context-viewsource,#context-viewinfo,#inspect-separator,#context-inspect,#frame,#frame-sep,#context-sep-selectall,/*页面*/
+#context-openlink,#context-openlinkprivate,#context-bookmarklink,#context-savelink,#context-openlinkincurrent,#context-sep-open,/*链接*/
+#context-viewimage,#context-sendimage,#context-setDesktopBackground,#context-viewimageinfo,#context-sep-copyimage,/*图片*/
+#context-viewpartialsource-selection,/*选中*/
+#context-sep-paste,#context-keywordfield,#spell-separator,#spell-check-enabled,#spell-add-dictionaries-main,menuitem[label="显示建议"][cmd="cmd_togglesuggest"],/*输入框*/
+#context-sendvideo,#context-castvideo,#context-media-hidecontrols,#context-media-playbackrate,#context-video-saveimage,#context-viewvideo,#context-video-fullscreen,#context-media-sep-commands,#context-sendaudio,#context-media-showcontrols/*媒体*/
+{display:none!important;}
+#context-navigation{background: none!important;}
+}
+/*侧边栏右键菜单隐藏*/
+@-moz-document url("chrome://browser/content/web-panels.xul"){#contentAreaContextMenu{display:none!important;}}
+/*————————————————————弹出菜单————————————————————*/
+menupopup.textbox-contextmenu,
+popupset  menupopup,
+popupset > menupopup menupopup,
+popupset >*:not(menupopup) menupopup,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup,
+#PlacesToolbar menupopup,
+#configContext,
+#places menupopup,
+menubar menupopup,
+#sourceeditor-context,
+#alltabs-popup{margin:-3px!important;border:3px solid transparent !important;border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAOUlEQVR42mNkYGBgZsADGKEKWKA0TPFfKP4DU8AOxcgKfoIwTAEXVMEbqAIRqIJvRCsgaAVBR+IEAKHgEiFjinAJAAAAAElFTkSuQmCC) 3 stretch !important;background-clip:padding-box!important;-moz-appearance:none!important;background-color: #FFF!important; }
+/*菜单字体区域*/
+menupopup :-moz-any(menuitem,menu)>:-moz-any(.menu-text,.menu-iconic-text){margin-right:25px!important;font-size: 1.1rem;}
+/*菜单右侧区域*/
+menupopup :-moz-any(menuitem,menu)>.menu-accel-container{display: none!important;}

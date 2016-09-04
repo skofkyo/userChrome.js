@@ -1,0 +1,13 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+/*b站直播*/
+@-moz-document url-prefix("http://live.bilibili.com/"){object#player_object:not([gpu="true"]){-moz-binding: url("data:application/xml,<?xml version='1.0' encoding='UTF-8'?><bindings xmlns='http://www.mozilla.org/xbl'><binding id='object' bindToUntrustedContent='true'><implementation><constructor><![CDATA[var flashObj = this;var param = flashObj.querySelector('[name=\"wmode\"],[name=\"wMode\"]') || document.createElement('param');param.name='wmode';param.value='gpu';if(param && !param.parentElement){flashObj.appendChild(param);};flashObj.setAttribute('gpu','true');flashObj.parentNode.replaceChild(flashObj.cloneNode(true), flashObj);]]></constructor></implementation></binding></bindings>")}
+object#live-video{display: none!important;}
+}
+/*战旗直播*/
+@-moz-document url-prefix("http://www.zhanqi.tv/"){object#BFPlayerID:not([gpu="true"]){-moz-binding: url("data:application/xml,<?xml version='1.0' encoding='UTF-8'?><bindings xmlns='http://www.mozilla.org/xbl'><binding id='object' bindToUntrustedContent='true'><implementation><constructor><![CDATA[var flashObj = this;var param = flashObj.querySelector('[name=\"wmode\"],[name=\"wMode\"]') || document.createElement('param');param.name='wmode';param.value='gpu';if(param && !param.parentElement){flashObj.appendChild(param);};flashObj.setAttribute('gpu','true');flashObj.parentNode.replaceChild(flashObj.cloneNode(true), flashObj);]]></constructor></implementation></binding></bindings>")}
+.live-team-banner,.dawn-murder{padding-top: 100px!important;}
+}
+/*爱奇艺*/
+@-moz-document url-prefix("http://www.iqiyi.com/v"){object#flash:not([gpu="true"]){-moz-binding: url("data:application/xml,<?xml version='1.0' encoding='UTF-8'?><bindings xmlns='http://www.mozilla.org/xbl'><binding id='object' bindToUntrustedContent='true'><implementation><constructor><![CDATA[var flashObj = this;var param = flashObj.querySelector('[name=\"wmode\"],[name=\"wMode\"]') || document.createElement('param');param.name='wmode';param.value='gpu';if(param && !param.parentElement){flashObj.appendChild(param);};flashObj.setAttribute('gpu','true');flashObj.parentNode.replaceChild(flashObj.cloneNode(true), flashObj);]]></constructor></implementation></binding></bindings>")}}
+/*嘀哩嘀哩*/
+@-moz-document url-prefix("https://player.005.tv:60000/?vid="){embed#ckplayer_a1:not([gpu="true"]){-moz-binding: url("data:application/xml,<?xml version='1.0' encoding='UTF-8'?><bindings xmlns='http://www.mozilla.org/xbl'><binding id='embed' bindToUntrustedContent='true'><implementation><constructor><![CDATA[this.setAttribute('wmode', 'direct');this.setAttribute('gpu','true');this.parentNode.replaceChild(this.cloneNode(true), this);]]></constructor></implementation></binding></bindings>")}}

@@ -1,0 +1,29 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document url("about:newtab"){
+/*背景*/
+#newtab-vertical-margin {background: url(http://7xrn7f.com1.z0.glb.clouddn.com/16-6-12/65424227.jpg);background-size:cover;background-position: center;background-attachment: fixed;}
+/*右上角按钮*/
+#newtab-customize-button{display: none;}
+/*搜索框*/
+#newtab-search-container{visibility: hidden;}
+/*拨号*/
+.newtab-cell{border-radius: 0!important;background-color: rgba(0,0,0,.1)!important;}
+/*拨号内*/
+.newtab-link{border-radius: 0!important;border: 0!important;margin: 0!important;}
+/*拨号内图片*/
+.newtab-thumbnail{border-radius: 0!important;}
+/*拨号内下方标题*/
+.newtab-title{border-radius: 0!important;border: 0!important;padding: 0!important;background: rgba(255,255,255,.3)!important;color: #5c5c5c!important;}
+.newtab-site .newtab-title::before{display: none;}
+/*拨号控制按钮*/
+.newtab-control-block, .newtab-control-pin{display: none;}
+/*拨号图标*/
+[href="http://www.bilibili.com/video/online.html"] .newtab-thumbnail {background:url("http://i0.hdslb.com/group1/M00/B7/85/oYYBAFdqR-CAWehIAAAXeDLB0oc569.png") center center no-repeat !important;}
+[href="http://tieba.baidu.com/f?kw=bilibili"] .newtab-thumbnail {background:url("http://imgsrc.baidu.com/forum/pic/item/1d950a7b02087bf44c5cb5e9f5d3572c11dfcf7a.jpg") center center no-repeat !important;}
+[href="http://bbs.kafan.cn/forum-215-1.html"] .newtab-thumbnail {background:url("http://fj.ikafan.com/template/comeing_city/comeing/logo.png?x") center center no-repeat !important;}
+[href="http://cartoon.tudou.com/"] .newtab-thumbnail {background:url("http://u2.tdimg.com/1/107/28/165384234430148231951818764176172083921.jpg") center center no-repeat !important;}
+[href="http://www.tucao.tv/list/11/"] .newtab-thumbnail {background:url("http://www.tucao.tv/skin2013/logo.png") center center no-repeat !important;background-size: 80% auto!important;}
+[href="http://www.bilibili.com/video/bangumi-two-1.html"] .newtab-thumbnail {background:url("http://i0.hdslb.com/headers/203767e222695660fc46c0e7f48d1d01.png") center center no-repeat !important;}
+[href="http://vip.youku.com/?c=privilege&a=detail&type=speedup"] .newtab-thumbnail {background:url("http://static.youku.com/paymentcenter/vip/pc/build/images/logo.png") center center no-repeat !important;}
+[href="https://www.hacg.red/wp/anime.html"] .newtab-thumbnail {background:url("https://www.hacg.lol/2/img/toplogo.png") center center no-repeat !important;background-size: auto 80%!important;}
+}

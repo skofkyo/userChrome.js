@@ -1,0 +1,16 @@
+/* AGENT_SHEET */
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+*{font-family:"XHei Intel"!important;}
+/*————————————————————滚动条————————————————————*/
+scrollbar{-moz-appearance:none!important;background:none!important;position:relative!important;padding:unset!important;pointer-events: auto!important;}
+scrollbar thumb{-moz-appearance:none!important;background-color:rgba(128,128,128,.4)!important;border-radius:4px!important;margin: unset!important;border:none!important;}
+scrollbar:hover thumb,scrollbar thumb:hover{background-color:rgba(128,128,128,.7)!important;}
+scrollbar thumb:active{background-color:rgba(128,128,128,1)!important;}
+/* 垂直滚动条 */
+scrollbar[orient="vertical"]{min-width:8px!important;max-width: 8px!important;min-height:15px!important;margin-left: -8px!important;}
+scrollbar thumb[orient="vertical"]{min-height:20px!important;}
+/* 水平滚动条 */
+scrollbar[orient="horizontal"]{min-height:8px!important;max-height:8px!important;min-width:15px!important;margin-top: -8px!important;}
+scrollbar thumb[orient="horizontal"]{min-width:20px!important;}
+/* 俩端按钮 */
+scrollbar scrollcorner,scrollbar scrollbarbutton{display:none!important;}

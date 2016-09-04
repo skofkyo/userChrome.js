@@ -1,0 +1,70 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+/*————————————————百度搜索————————————————*/
+@-moz-document regexp("^https?://www\\.baidu\\.com/((s|baidu)\\?.*|#wd)"){
+div#content_left,div.nums,div.search_tool_conter,div#content_left>div{
+width:auto!important;float:none!important;}
+#ala_img_results{min-height: 180px!important;}
+div#content_left>table{width:80%!important;}
+div.c-span18:not(.op-movievideo-right){width:auto!important;float:none!important;}
+div#content_right{display:none!important;}
+div#content_left>div{padding:8px 10px!important;box-shadow:0 0 5px rgba(0,0,0,0.3);}
+[class="result-op xpath-log"],[class="rrecom-btn-parent rrecom-btn-s rrecom-btn-moving rrecom-btn-click"]{display:none!important;} }
+/*————————————————百度贴吧————————————————*/
+@-moz-document url-prefix("http://tieba.baidu.com/f?"){
+.threadlist_bright .threadlist_title{font-size: 16px!important;}
+body{line-height: unset!important;}
+.wrap1,.wrap2{background: none!important;}/*整体背景*/
+/*元素隐藏*/
+#head,/*头部导航*/
+#pagelet_platform-official\/pagelet\/official_head_block,#pagelet_frs-header\/pagelet\/head_content_middle,#pagelet_live\/pagelet\/live,/*隐藏标题栏下方推广，导航，直播*/
+.tbui_aside_float_bar,/*隐藏右侧浮动栏*/
+.head_banner,.card_banner,/*头图*/
+.forum_content .aside/*帖子列表右侧*/{display: none;}
+/*贴吧头像*/
+.card_head{top:0!important;width: 48px!important;height: 48px!important;padding: 0!important;border: none!important;}/*贴吧头像区域*/
+.card_head_img{width: 48px!important;height: 48px!important;}/*贴吧头像*/
+.card_top_left,.card_top{padding-left: 100px!important;margin: 0!important;}/*贴吧头像右侧区域*/
+/*各种宽度*/
+.head_main .head_middle, .head_main .head_content,/*贴吧heard*/
+.content, .foot,.forum_content .main,/*帖子列表区域*/
+.frs_content_footer_pagelet/*回复框*/{width:  1160px!important;}
+.threadlist_text,  .threadlist_title{width: auto!important;}/*标题和内容区域宽度*/
+.threadlist_bright .threadlist_abs_onlyline,  .threadlist_bright .threadlist_abs{width: auto!important;}/*帖子内容宽度*/
+.threadlist_bright .media_box{width: 740px!important;}/*看图区域*/
+/*其他调整*/
+.forum_content{background: none!important;}/*帖子列表背景图*/
+.threadlist_title{font-size: 16px!important;}/*列表标题字体大小*/
+}
+@-moz-document url-prefix("http://tieba.baidu.com/p/"){
+.d_post_content{font-size: 15px!important;}
+body{line-height: 16px!important;}
+/*整体背景*/
+.wrap1,.wrap2{background: none!important;}
+/*元素隐藏*/
+#head,/*头部导航*/
+.tbui_aside_float_bar,/*右侧浮动栏*/
+.plat_head_v2_unmain_wrapper,/*标题栏下方推广*/
+.right_bright,/*帖子右侧*/
+.achievement_medal_section/*帖子内容下方区域*/{display: none!important;}
+/*各种宽度*/
+.l_container,.content,/*主体*/
+.pb_footer,.thread_theme_7,/*回复区域*/
+.left_section .core_title_absolute_bright/*浮动帖子标题*/{width:  1160px!important;}
+.nav_wrap_add_border{width: auto!important;}/*帖子导航*/
+.thread_theme_5{width:  auto!important;}/*帖子信息*/
+.pb_content{width:  100%!important;}/*帖子主体*/
+.left_section{width:  100%!important;}/*帖子左侧*/
+.core_title_wrap_bright{width:  auto!important;border-left: 1px solid #E5E5E5;}/*帖子标题*/
+.l_post_bright{width:  auto!important;;}/*帖子内容区域宽度*/
+.d_post_content_main{width:calc(100% - 150px)!important;}/*帖子内容区域宽度*/ 
+.l_post_bright .core_reply_wrapper{width:  100%!important;margin: 0!important;}/*帖子回复区域宽度*/
+.lzl_post_hidden{width:100%!important;}/*帖子回复隐藏区域宽度*/
+/*其他调整*/
+.card_top_theme2{margin: 0!important;}/*头部*/
+.core_reply_tail{margin: 0!important;}/*帖子内容下方楼层信息*/
+.post_bubble_top,.post_bubble_middle{background: none!important;width: auto!important;}/*会员帖子内容*/
+.post_bubble_top,.post_bubble_bottom{display: none!important;}/*会员帖子内容*/
+.d_post_content{font-size: 15px!important;}/*帖子内容字体大小*/
+.user-hide-post-down,.user-hide-post-up{right: 0!important;top:5px!important;}/*下拉三角*/
+.BDE_Image{max-width: 100%!important;width: auto!important;height: auto!important;cursor:unset!important;}
+}

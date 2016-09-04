@@ -1,0 +1,31 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url("chrome://browser/content/browser.xul"){
+/*多行书签栏
+#PersonalToolbar,#PlacesToolbar{max-height: 100%!important;}
+#personal-bookmarks #PlacesToolbar {display: block !important;overflow-x: hidden;overflow-y: auto;}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems {overflow-x: visible;overflow-y: visible;display: block !important;}
+#personal-bookmarks #PlacesToolbar #PlacesToolbarItems>box {display: block;}
+#personal-bookmarks #PlacesToolbar {display: block !important;overflow-x: hidden;overflow-y: auto;}
+#personal-bookmarks {display: block !important;}*/
+
+/*自动隐藏书签栏到侧边*/
+#main-window[sizemode="maximized"]:not([customizing="true"]) #PersonalToolbar{background: #fff!important;opacity:0 !important;position:fixed!important;max-height: 40px !important;width:5px!important;margin-top: 30px !important;padding: 0!important;transition: 0.15s ease-out 1.5s!important;will-change: width,opacity;}
+#main-window[sizemode="maximized"]:not([customizing="true"]) #PersonalToolbar:hover{width: 150px !important;opacity:1 !important;max-height:100%!important;transition: 0.15s!important;box-shadow: 0 0 3px rgba(0,0,0,.3) !important;}
+#main-window[sizemode="maximized"]:not([customizing="true"]) #PersonalToolbar #PlacesToolbarItems > box{display: -moz-groupbox !important;}
+#main-window[sizemode="maximized"]:not([customizing="true"]) #PersonalToolbar toolbarbutton.bookmark-item{width: 150px!important;}
+
+/*视频网站自动隐藏导航栏*/
+#main-window[sizemode="maximized"]:-moz-any(
+  [stylish-url*="http://www.bilibili.com/video/av"],
+  [stylish-url*="http://live.bilibili.com/"],
+  [stylish-url*="http://www.tudou.com/albumplay/"],
+  [stylish-url*="http://www.zhanqi.tv/"],
+  [stylish-url*="http://v.youku.com/v_show/id_"],
+  [stylish-url*="http://www.tucao.tv/play/h"]
+  ) #nav-bar{opacity: 0;margin-top: -30px!important;-moz-transition: 0.15s ease 1.5s;will-change: margin-top,opacity;}
+#main-window[sizemode="maximized"] #TabsToolbar:hover ~ #nav-bar,
+#main-window[sizemode="maximized"] #nav-bar:hover,
+#main-window[sizemode="maximized"] #titlebar:hover ~ #tab-view-deck  #nav-bar{opacity: 1;margin-top: 0px!important;-moz-transition: .2s;}
+#nav-bar{-moz-transition: 0.15s;}
+#main-window[sizemode="maximized"] #TabsToolbar{-moz-window-dragging: no-drag!important;}
+}
